@@ -1,2 +1,11 @@
-jQuery.fn.missing = function () { return !this.length; };
-jQuery.fn.exists = function () { return !jQuery.fn.missing(); };
+(function ($) {
+	"use strict";
+
+	$.fn.missing = function () {
+		return !this.length;
+	};
+
+	$.fn.exists = function () {
+		return !$.fn.missing();
+	};
+}(jQuery));
