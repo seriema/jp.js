@@ -1,8 +1,8 @@
-(function ($) {
+(function () {
 	"use strict";
 
 	var logError = function (OS, browser, version, message, url, lineNumber) {
-		log = {
+		var log = {
 			'client': {
 				'OS': OS,
 				'browser': browser,
