@@ -1,0 +1,4894 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>QUnit Example</title>
+    <link rel="stylesheet" href="../../libs/QUnit/qunit-1.10.0.css">
+</head>
+<body>
+<div id="qunit"></div>
+<div id="qunit-fixture">
+
+<header class="partial-header" data-url-minicart="URL TO MINICART" data-partial="header">
+<div id="header">
+
+<div class="logo">
+    <img src="http://placekitten.com/140/35"/>
+</div>
+<div class="menu">
+<div class="top">
+    <div class="language-selection">
+        <a href="#">Change language</a>
+    </div>
+    <div class="tier">Get free shipping, buy for 67.90 EUR more.</div>
+</div>
+<nav>
+<!-- TODO: Join this search box with the one inside .nav -->
+<div class="search">
+    <input type="text" placeholder="Search product, SKU, etc.."/>
+    <button>?</button>
+</div>
+
+<ul class="nav">
+<li class="menu-search"><img class="icon" src="../../_ui/common/images/icon_search.gif"/>
+
+    <ul class="nav">
+        <li class="search"><input value="Search product, SKU, etc.."/>
+            <button>?</button>
+        </li>
+    </ul>
+</li>
+
+<li class="menu-sign-in">
+    <a class="label" href="#">
+        <i class="icon-user icon-large"></i> Sign in <i class="icon-angle-down icon-large"></i>
+    </a>
+
+
+    <ul class="nav">
+        <li><a href="#">[Menu for Signed in]</a> <!-- Menu to show when signed in -->
+            <ul class="nav">
+                <li class="signed-in">
+                    <p class="username">Josef Larsen (customer nr: 123456)</p>
+                    <ul>
+                        <li><a href="#" class="my-papyrus">My Papyrus</a></li>
+                        <li><a href="#">My Account</a></li>
+                        <li><a href="#">My Shopping lists</a> <span class="count">2</span></li>
+                        <li><a href="#">My Orders</a> <span class="count">1</span></li>
+                        <li><a href="#">My Invoices</a></li>
+                        <li><a href="#">My Messages</a></li>
+                        <li><a href="#">My Pricefiles</a></li>
+                        <li><a href="#">My Statistics</a></li>
+                        <li><a href="#">My Support Agent</a></li>
+                        <li>
+                            <hr/>
+                        </li>
+                        <li><a href="#">User management</a></li>
+                        <li><a href="#">Order management</a></li>
+                        <li>
+                            <hr/>
+                        </li>
+                        <li><a href="#">Sign out</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+
+        <!-- Menu to show when NOT signed in -->
+        <li><a href="#">[Menu for Anonymous]</a>
+            <ul class="nav">
+                <li class="sign-in">
+                    <h2>Sign in</h2>
+
+                    <form name="sign-in">
+                        <p>E-mail or ID</p>
+                        <input type="text" name="username"/>
+
+                        <p>Password</p>
+                        <input type="password" name="password"/>
+
+                        <div>
+                            <input type="checkbox"/> <span>Remember me</span>
+                        </div>
+                        <input type="button" value="Secure sign in"/>
+                        <hr/>
+                        <a href="#">Forgot your password?</a> <br/> <a href="#">Existing customer?</a>
+                    </form>
+                    <hr/>
+                    <h2>New customer?</h2> <a href="#">Register</a>
+
+                    <p>...and start buying today!</p>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</li>
+
+<li class="menu-catalog">
+    <a class="label" href="#">
+        <i class="icon-sitemap icon-large"></i> Catalog <i class="icon-angle-down icon-large"></i>
+    </a>
+
+    <ul class="nav">
+        <li class="catalog">
+            <ul class="categories">
+                <li class="category"><img src="http://placekitten.com/140/40"/>
+
+                    <h3>
+                        <a href="#">Coated paper</a>
+                    </h3>
+                    <ul class="subcategories">
+                        <li><a href="#">MultiArt</a></li>
+                        <li><a href="#">LuxoArt</a></li>
+                        <li><a href="#">Terraprint</a></li>
+                    </ul>
+                    <a class="more" href="#">More... (2)</a></li>
+                <li class="category"><img src="http://placekitten.com/140/40"/>
+
+                    <h3>
+                        <a href="#">Uncoated paper</a>
+                    </h3>
+                    <ul class="subcategories">
+                        <li><a href="#">PakoPharm</a></li>
+                        <li><a href="#">PlanoDynamic</a></li>
+                        <li><a href="#">DigiGold</a></li>
+                    </ul>
+                    <a class="more" href="#">More... (7)</a></li>
+                <li class="category"><img src="http://placekitten.com/140/40"/>
+
+                    <h3>
+                        <a href="#">Envelopes</a>
+                    </h3>
+                    <ul class="subcategories">
+                        <li><a href="#">Majestic</a></li>
+                        <li><a href="#">Rives Dot</a></li>
+                        <li><a href="#">Bier Papier</a></li>
+                    </ul>
+                </li>
+                <li class="category"><img src="http://placekitten.com/140/40"/>
+
+                    <h3>
+                        <a href="#">Technical specialities</a>
+                    </h3>
+                    <ul class="subcategories">
+                        <li><a href="#">Aquastrong</a></li>
+                        <li><a href="#">JAC</a></li>
+                        <li><a href="#">EnDuro</a></li>
+                    </ul>
+                </li>
+                <li class="category"><img src="http://placekitten.com/140/40"/>
+
+                    <h3>
+                        <a href="#">Coated paper</a>
+                    </h3>
+                    <ul class="subcategories">
+                        <li><a href="#">MultiArt</a></li>
+                        <li><a href="#">LuxoArt</a></li>
+                        <li><a href="#">Terraprint</a></li>
+                    </ul>
+                    <a class="more" href="#">More... (2)</a></li>
+                <li class="category"><img src="http://placekitten.com/140/40"/>
+
+                    <h3>
+                        <a href="#">Coated paper</a>
+                    </h3>
+                    <ul class="subcategories">
+                        <li><a href="#">MultiArt</a></li>
+                        <li><a href="#">LuxoArt</a></li>
+                        <li><a href="#">Terraprint</a></li>
+                    </ul>
+                    <a class="more" href="#">More... (2)</a></li>
+                <li class="category"><img src="http://placekitten.com/140/40"/>
+
+                    <h3>
+                        <a href="#">Coated paper</a>
+                    </h3>
+                    <ul class="subcategories">
+                        <li><a href="#">MultiArt</a></li>
+                        <li><a href="#">LuxoArt</a></li>
+                        <li><a href="#">Terraprint</a></li>
+                    </ul>
+                    <a class="more" href="#">More... (2)</a></li>
+                <li class="category"><img src="http://placekitten.com/140/40"/>
+
+                    <h3>
+                        <a href="#">Coated paper</a>
+                    </h3>
+                    <ul class="subcategories">
+                        <li><a href="#">MultiArt</a></li>
+                        <li><a href="#">LuxoArt</a></li>
+                        <li><a href="#">Terraprint</a></li>
+                    </ul>
+                    <a class="more" href="#">More... (2)</a></li>
+            </ul>
+            <ul class="extras">
+                <li class="extra">
+                    <h2>My products</h2>
+                    <ul>
+                        <li><a href="#">In my Contract</a></li>
+                        <li><a href="#">Most ordered articles</a></li>
+                    </ul>
+                </li>
+                <li class="extra category">
+                    <h3>
+                        <a href="#">Services</a>
+                    </h3>
+                    <ul class="subcategories">
+                        <li><a href="#">Cutting</a></li>
+                        <li><a href="#">Punching</a></li>
+                        <li><a href="#">Wrapping</a></li>
+                        <li><a href="#">Unwrapping</a></li>
+                    </ul>
+                    <p>
+                        <a href="#">More... (3)</a>
+                    </p>
+                </li>
+                <li class="extra">
+                    <ul>
+                        <li><a href="#">Outgoing articles</a></li>
+                        <li><a href="#">Campaigns</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</li>
+
+<li class="menu-my-lists">
+    <a class="label" href="#">
+        <i class="icon-star icon-large"></i> My lists <i class="icon-angle-down icon-large"></i>
+    </a>
+
+    <ul class="nav">
+        <li><a href="#">[Menu for Signed in]</a> <!-- Menu to show when signed in -->
+            <ul class="nav">
+                <li class="my-lists">
+                    <h2>My shopping lists</h2>
+                    <table class="lists">
+                        <tr class="list">
+                            <td><a href="#">Paper materials</a></td>
+                            <td>17</td>
+                            <td class="add"><a href="#">Add all to cart</a></td>
+                        </tr>
+                        <tr class="list">
+                            <td><a href="#">Great food packaging stuff</a></td>
+                            <td>22</td>
+                            <td class="add"><a href="#">Add all to cart</a></td>
+                        </tr>
+                        <tr class="list">
+                            <td><a href="#">For head quarter office</a></td>
+                            <td>4</td>
+                            <td class="add"><a href="#">Add all to cart</a></td>
+                        </tr>
+                        <tr class="list">
+                            <td><a href="#">Regular fill</a></td>
+                            <td>16</td>
+                            <td class="add"><a href="#">Add all to cart</a></td>
+                        </tr>
+                        <tr class="list">
+                            <td><a href="#">Cleaning material start package</a></td>
+                            <td>3</td>
+                            <td class="add"><a href="#">Add all to cart</a></td>
+                        </tr>
+                    </table>
+                    <a href="#">Manage shopping lists</a>
+                </li>
+            </ul>
+        </li>
+
+        <!-- Menu to show when NOT signed in -->
+        <li><a href="#">[Menu for Anonymous]</a>
+            <ul class="nav">
+                <li class="sign-in">
+                    <h2>MY SHOPPING LISTS</h2>
+
+                    <p>Here you can save all your favorite articles!</p>
+
+                    <p>
+                        <a href="#">Sign in</a> or <a href="#">register</a> to use shopping lists.
+                    </p>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</li>
+
+<li class="menu-cart">
+    <a class="label" href="#">
+        <i class="icon-shopping-cart icon-large"></i> Cart: 3 <i class="icon-angle-down icon-large"></i>
+    </a>
+    <ul class="nav">
+        <li class="cart">
+            <table class="items">
+                <tr class="item">
+                    <td><img src="../../_ui/common/images/placeholder_45x45.gif"/></td>
+                    <td>
+                        <p>88036955</p>
+
+                        <p class="title">
+                            <a href="#">MultiArt Matt</a>
+                        </p>
+
+                        <p>width 320 | height 450 | weight 115</p>
+                    </td>
+                    <td>
+                        <p class="quantity">4 boxes (1000 sheets)</p>
+
+                        <p class="price">43.47 EUR</p>
+                    </td>
+                    <td class="remove"><a href="#">Remove</a></td>
+                </tr>
+                <tr class="item">
+                    <td><img src="../../_ui/common/images/placeholder_45x45.gif"/></td>
+                    <td>
+                        <p>533836</p>
+
+                        <p class="title">
+                            <a href="#">Swep mop handle</a>
+                        </p>
+
+                        <p>size 50 cm | material plastic</p>
+                    </td>
+                    <td>
+                        <p class="quantity">1 carton (10 pcs)</p>
+
+                        <p class="price">250.10 EUR</p>
+                    </td>
+                    <td class="remove"><a href="#">Remove</a></td>
+                </tr>
+                <tr class="item">
+                    <td><img src="../../_ui/common/images/placeholder_45x45.gif"/></td>
+                    <td>
+                        <p>533174</p>
+
+                        <p class="title">
+                            <a href="#">Mopp Swep Duo Microtech</a>
+                        </p>
+
+                        <p>size 50 cm | material 100% polyester</p>
+                    </td>
+                    <td>
+                        <p class="quantity">1 carton (10 pcs)</p>
+
+                        <p class="price">178.29.10 EUR</p>
+                    </td>
+                    <td class="remove"><a href="#">Remove</a></td>
+                </tr>
+            </table>
+            <div class="more">
+                <p>
+                    <a href="#">12 more items (View all)</a>
+                </p>
+            </div>
+            <div class="total-price">
+                <p>Total (approximation)</p>
+
+                <p class="price">932.10 EUR</p>
+            </div>
+            <div class="tier">
+                <img src="../../_ui/common/images/tier_bar.gif"/>
+
+                <p>Get free shipping, buy for 67.90 EUR more.</p>
+            </div>
+            <div class="checkout">
+                <p>
+                    <a href="#" class="button">Checkout</a>
+                </p>
+            </div>
+        </li>
+    </ul>
+</li>
+</ul>
+</nav>
+</div>
+
+
+<section class="partial-breadcrumbs full-width" data-partial="breadcrumbs">
+    <ul>
+        <li><a href="#"><i class="icon-home icon-large"></i></a></li>
+        <li><a href="#">Level 1</a></li>
+        <li><a href="#">Level 2</a></li>
+        <li><a href="#">Level 3</a></li>
+        <li><a href="#">Level 4</a></li>
+    </ul>
+    <h1 class="page-title">
+        Checkout
+    </h1>
+</section>
+
+</div>
+<!-- End #header -->
+
+</header>
+
+<div id="container" class="cf">
+
+<div class="page-checkout full-width">
+
+
+<section class="partial-checkout " data-url-delivery="URL TO checkoutFragment.tag"
+         data-url-pickup="URL TO addressBox.tag" data-url-note-invoice="URL TO WEB API COST CENTER CODE"
+         data-url-note-order="URL TO WEB API ORDER NOTE" data-url-note-transport="URL TO WEB API TRANSPORT NOTE"
+         data-partial="checkout"
+         data-url-address-invoice="URL TO WEB API INVOICE EDITED ADDRESS"
+         data-url-address-transport="URL TO WEB API TRANSPORT EDITED ADDRESS"
+         data-url-receipt="URL TO RECEIPT PAGE, WF-176" data-url-shipping="URL TO checkoutShipping.tag"
+         data-url-summary="URL TO orderSummaryBox.tag">
+
+
+<div class="partial-alert-box alert alert-error full-width is-placed-order-failed is-hidden"
+     data-partial="alert-box">
+    <button type="button" class="close">×</button>
+    <div class="content">
+
+        We're sorry, but there was an error processing your order.
+
+    </div>
+</div>
+<article class="cart two-thirds-width first-col">
+
+
+<form class="partial-form delivery-options" commandName="" data-partial="form">
+    <h2>Delivery options</h2>
+
+
+    <div class="partial-tabular-view shipping-options" data-partial="tabular-view">
+        <ul class="tab-navigation">
+            <li><label><input type="radio" class="tab-nav" name="delivery-option" value="shipping" checked
+                              required/><span class="type">Shipping</span> <span class="info">(delivered to you)</span></label>
+            </li>
+            <li><label><input type="radio" class="tab-nav" name="delivery-option" value="pick-up" required/><span
+                    class="type">Pick up</span> <span
+                    class="info">(you pick up at one of our warehouses)</span></label></li>
+            <li><label><input type="radio" class="tab-nav" name="delivery-option" value="split-shipping"
+                              required/><span class="type">Split shipping</span> <span class="info">(delivered to you, in different shipments)</span></label>
+            </li>
+        </ul>
+        <div class="tab-views">
+            <section id="shipping" class="tab-view">
+
+
+                <section class="partial-checkout-address " data-partial="checkout-address">
+
+
+                    <fieldset class="is-selected-address">
+                        <section class="partial-form-field partial-form-select "
+                                 data-partial="form-field form-select">
+                            <label for="">Ship-to address</label>
+                            <select
+                                    name="selectedaddress"
+                                    >
+                                <option>Volvo loading bay A</option>
+                                <option>Volvo loading bay B</option>
+                                <option>Volvo loading bay C</option>
+                            </select>
+                            <span class="extra-info"><i class='icon-search icon-large'></i></span>
+                        </section>
+                    </fieldset>
+
+
+                </section>
+                <fieldset>
+                    <section class="partial-form-field partial-form-text-area "
+                             data-partial="form-field form-text-area">
+                        <label for="">Transport notes</label>
+                        <textarea id=""
+                                  name="transportnote"
+                                ></textarea>
+                        <span class="extra-info"></span>
+                    </section>
+                </fieldset>
+
+                <div class="shipping-conditions-placeholder">
+
+
+                    <div class="partial-tabular-view partial-checkout-shipping delivery"
+                         data-partial="tabular-view checkout-shipping">
+
+                        <ul class="tab-navigation">
+                            <li><label><input type="radio" class="tab-nav" name="shipping-option"
+                                              value="regular" checked/>Regular shipping</label></li>
+
+
+                            <li><label><input type="checkbox" name="splitdelivery"/> Allow split deliveries</label>
+                            </li>
+                        </ul>
+
+                        <div class="tab-views">
+                            <section id="regular" class="tab-view">
+
+
+                                <section class="partial-form-field partial-form-date  "
+                                         data-partial="form-field form-date"
+
+
+                                        >
+                                    <label for="">Delivery date *</label>
+                                    <input type="text"
+
+                                           name="deliverydate"
+
+
+                                           required
+
+
+                                            />
+                                    <span class="extra-info"></span>
+                                </section>
+
+                            </section>
+
+                        </div>
+
+
+                    </div>
+                </div>
+            </section>
+            <section id="pick-up" class="tab-view">
+                You can pick up your goods at:
+                <div class="is-location-placeholder">Loading...</div>
+            </section>
+            <section id="split-shipping" class="tab-view">
+                Split shipping
+            </section>
+        </div>
+
+
+    </div>
+</form>
+
+
+<form class="partial-form payment-section" commandName="" data-partial="form">
+    <h2>Payment options</h2>
+
+
+    <div class="partial-tabular-view payment-option" data-partial="tabular-view">
+        <ul class="tab-navigation">
+            <li><label><input type="radio" class="tab-nav" name="payment-option" value="invoice" checked
+                              required/><span class="type">Invoice</span> <span class="info"></span></label></li>
+            <li><label><input type="radio" class="tab-nav" name="payment-option" value="credit-card" required/><span
+                    class="type">Credit card</span> <span class="info"></span></label></li>
+        </ul>
+        <div class="tab-views">
+            <section class="tab-view" id="invoice">
+                <fieldset class="is-selected-invoice">
+                    <section class="partial-form-field partial-form-select " data-partial="form-field form-select">
+                        <label for="">Invoice address</label>
+                        <select
+                                name="invoiceaddress" disabled
+                                >
+                            <option>Larsen Printshop CO</option>
+                        </select>
+                        <span class="extra-info"><a href='#'>Edit addresses</a></span>
+                    </section>
+                </fieldset>
+                <fieldset>
+                    <section class="partial-form-field partial-form-text " data-partial="form-field form-text">
+                        <label for="">Cost center code</label>
+                        <input type="number"
+                               name="costCenterCode" max="9999999999"
+                                />
+                        <span class="extra-info">For your cost center. Max 10 digits.</span>
+                    </section>
+                </fieldset>
+            </section>
+            <section class="tab-view" id="credit-card">
+                When you place the order you will be taken to our payment partner.
+            </section>
+        </div>
+
+
+    </div>
+</form>
+<section class="order-deliveries">
+
+
+<div class="partial-alert-box alert alert-error is-update-failed is-hidden" data-partial="alert-box">
+    <button type="button" class="close">×</button>
+    <div class="content">
+        <strong>Warning.</strong> Could not update cart. Please <a href="javascript:document.location.reload(true)">try
+        again</a>.
+
+    </div>
+</div>
+<section class="is-updating-delivery is-hidden">
+    <span class="is-loading">Updating cart.</span>
+</section>
+
+<div class="is-delivery-placeholder">
+
+
+<section class="partial-checkout-delivery " data-partial="checkout-delivery">
+
+
+<section class="action-list">
+<h2>Your actions needed</h2>
+
+
+<table class="partial-article-list partial-article-action-list" data-partial="article-list article-action-list">
+<thead class="head">
+<tr class="list-options">
+    <td class="select-all"><input type="checkbox"/></td>
+    <td class="actions" colspan="2">
+
+
+
+
+
+
+<span class="partial-ajax-action partial-ajax-tooltip-confirm delete" data-url-post="" data-post-data=""
+      data-url-delete="ADD URL TO WEB API HERE" data-delete-data="" data-partial="ajax-action ajax-tooltip-confirm">
+
+<span class="partial-tooltip confirm is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    Are you sure?
+    <a class='button yes' href='#'>Yes</a>
+    <a class='cancel' href='#'>Cancel</a>
+
+  </span>
+</span>
+</span>
+
+<span class="partial-tooltip error is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    Unknown error
+
+  </span>
+</span>
+</span> <a href="#" class="action button">Delete</a>
+</span> <label class="views"> <input type="checkbox"/> <span class="checkbox-text">Compact list</span></label></td>
+</tr>
+
+<tr class="sort">
+    <td></td>
+    <td class="article"><a href="#" class="not-linked">Article</a></td>
+    <td class="value"><a href="#" class="not-linked">Value</a></td>
+</tr>
+</thead>
+
+<tbody class="body">
+
+
+<tr class="item-article" data-articlecode="ARTICLE CODE" data-entrynr="ENTRY NUMBER">
+    <td><input type="checkbox"/></td>
+    <td class="article">
+        <article class="partial-article-box-landscape media" data-partial="article-box-landscape">
+            <div class="img">
+                <img class="image" src="http://placekitten.com/80" alt="Product image">
+            </div>
+            <div class="content">
+                <a href="#" class="article-id">SKU: 88036955</a>
+                <span class="name">MultiArt Matt</span>
+                <span class="properties">weight: 115 g/m2, size 320x450</span>
+            </div>
+        </article>
+    </td>
+    <td class="value"><span class="quantity">1 carton (10 pcs)</span> <span class="price">178.29 EUR</span></td>
+</tr>
+<tr class="item-article-substitution">
+    <td></td>
+    <td class="substitution" colspan="2"><span class="name">533836 Mop Handle Swep has been discontinued, please make a choice:</span>
+        <ul>
+            <li class="substitution-option"><a class="change" href="#">Change to substitute article 623533 Mop Handle
+                Swep Pro</a>
+
+
+                <section class="partial-article-quantity-picker " data-partial="article-quantity-picker"
+                         data-get-url="URL TO GET SUBSTITION ARTICLE PRICE INFO"
+                         data-sku="" data-price-info="">
+
+
+                    <div class="partial-alert-box alert alert-error error is-hidden" data-partial="alert-box">
+                        <button type="button" class="close">×</button>
+                        <div class="content">
+                            Connection problem. Please try again.
+                        </div>
+                    </div>
+
+
+                    <div class="body clearfix is-hidden">
+                        <form class="quantity-selection full-width validate loading">
+                            <label>Amount: </label>
+                            <!-- 		<div class="quantity-input">  -->
+                            <input type="number" min="1" name="quantity-value" class="quantity-value" required disabled>
+                            <select name="quantity-unit" class="quantity-unit" required disabled>
+                                <option value="" selected="selected"></option>
+                            </select>
+                            <!-- 		</div> -->
+                        </form>
+
+                        <section class="article-summary full-width is-hidden">
+                            <span class="sku-text">SKU: <span class="sku-id"></span></span>
+
+                            <div class="extra">
+                                <i class="icon-time icon-large"></i> <i class="icon-star-empty icon-large"></i> <span
+                                    class="in-contract badge is-hidden">In contract</span>
+                            </div>
+                        </section>
+
+                        <section class="article-price half-width first-col">
+                            <!--<span class="amount">2 pallets</span>-->
+                            &nbsp;
+                            <!-- HACK: Completely empty elements don't get any width/height and screws up the layout. This section starts empty. -->
+                            <span class="price is-hidden"><span class="price-number"></span> EUR</span> <span
+                                class="discount is-hidden">Save <span
+                                class="discount-amount"></span> EUR by ordering <span class="discount-next"></span>.
+      </span>
+                        </section>
+
+                        <section class="article-shop buy half-width">
+
+
+
+
+
+
+
+
+
+
+<span class="partial-ajax-action partial-ajax-simple-action clearfix" data-url-post="POST-URL-HERE" data-post-data=""
+      data-partial="ajax-action ajax-simple-action">
+
+<span class="partial-tooltip error is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content"> Unknown error
+  </span>
+</span>
+</span> <a href="#" class="action confirm button">Ok</a></span>
+
+                            <a class="cancel clearfix" href="#">Cancel</a>
+
+
+                        </section>
+
+                    </div>
+                </section>
+            </li>
+            <li class="substitution-option">
+
+
+                <span class="partial-ajax-action ajax-tooltip-confirm" data-partial=" ajax-action ajax-tooltip-confirm"
+                      data-url-post="URL-TO-WEB-API-HERE should probably include needed info" data-post-data=""
+                      data-url-delete=""
+                      data-delete-data="">
+
+<span class="partial-tooltip confirm is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    Are you sure?
+    <a class='button yes' href='#'>Yes</a>
+    <a class='cancel' href='#'>Cancel</a>
+
+  </span>
+</span>
+</span>
+
+<span class="partial-tooltip error is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    Unknown error
+
+  </span>
+</span>
+</span> <a href="#" class="action ">Delete this order line</a>
+                </span></li>
+        </ul>
+    </td>
+</tr>
+
+<tr class="item-article" data-articlecode="ARTICLE CODE" data-entrynr="ENTRY NUMBER">
+    <td><input type="checkbox"/></td>
+    <td class="article">
+        <article class="partial-article-box-landscape media" data-partial="article-box-landscape">
+            <div class="img">
+                <img class="image" src="http://placekitten.com/80" alt="Product image">
+            </div>
+            <div class="content">
+                <a href="#" class="article-id">SKU: 88036955</a>
+                <span class="name">MultiArt Matt</span>
+                <span class="properties">weight: 115 g/m2, size 320x450</span>
+            </div>
+        </article>
+    </td>
+    <td class="value"><span class="quantity">1 carton (10 pcs)</span> <span class="price">178.29 EUR</span></td>
+</tr>
+<tr class="item-article-substitution">
+    <td></td>
+    <td class="substitution" colspan="2"><span class="name">533836 Mop Handle Swep has been discontinued, please make a choice:</span>
+        <ul>
+            <li class="substitution-option"><a class="change" href="#">Change to substitute article 623533 Mop Handle
+                Swep Pro</a>
+
+
+                <section class="partial-article-quantity-picker " data-partial="article-quantity-picker"
+                         data-get-url="URL TO GET SUBSTITION ARTICLE PRICE INFO"
+                         data-sku="" data-price-info="">
+
+
+                    <div class="partial-alert-box alert alert-error error is-hidden" data-partial="alert-box">
+                        <button type="button" class="close">×</button>
+                        <div class="content">
+                            Connection problem. Please try again.
+                        </div>
+                    </div>
+
+
+                    <div class="body clearfix is-hidden">
+                        <form class="quantity-selection full-width validate loading">
+                            <label>Amount: </label>
+                            <!-- 		<div class="quantity-input">  -->
+                            <input type="number" min="1" name="quantity-value" class="quantity-value" required disabled>
+                            <select name="quantity-unit" class="quantity-unit" required disabled>
+                                <option value="" selected="selected"></option>
+                            </select>
+                            <!-- 		</div> -->
+                        </form>
+
+                        <section class="article-summary full-width is-hidden">
+                            <span class="sku-text">SKU: <span class="sku-id"></span></span>
+
+                            <div class="extra">
+                                <i class="icon-time icon-large"></i> <i class="icon-star-empty icon-large"></i> <span
+                                    class="in-contract badge is-hidden">In contract</span>
+                            </div>
+                        </section>
+
+                        <section class="article-price half-width first-col">
+                            <!--<span class="amount">2 pallets</span>-->
+                            &nbsp;
+                            <!-- HACK: Completely empty elements don't get any width/height and screws up the layout. This section starts empty. -->
+                            <span class="price is-hidden"><span class="price-number"></span> EUR</span> <span
+                                class="discount is-hidden">Save <span
+                                class="discount-amount"></span> EUR by ordering <span class="discount-next"></span>.
+      </span>
+                        </section>
+
+                        <section class="article-shop buy half-width">
+
+
+
+
+
+
+
+
+
+
+<span class="partial-ajax-action partial-ajax-simple-action clearfix" data-url-post="POST-URL-HERE" data-post-data=""
+      data-partial="ajax-action ajax-simple-action">
+
+<span class="partial-tooltip error is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content"> Unknown error
+  </span>
+</span>
+</span> <a href="#" class="action confirm button">Ok</a></span>
+
+                            <a class="cancel clearfix" href="#">Cancel</a>
+
+
+                        </section>
+
+                    </div>
+                </section>
+            </li>
+            <li class="substitution-option">
+
+
+
+
+
+<span class="partial-ajax-action partial-ajax-tooltip-confirm " data-partial="ajax-action ajax-tooltip-confirm"
+      data-url-post="URL-TO-WEB-API-HERE should probably include needed info" data-post-data="" data-url-delete=""
+      data-delete-data="">
+
+<span class="partial-tooltip confirm is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    Are you sure?
+    <a class='button yes' href='#'>Yes</a>
+    <a class='cancel' href='#'>Cancel</a>
+
+  </span>
+</span>
+</span>
+
+<span class="partial-tooltip error is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    Unknown error
+
+  </span>
+</span>
+</span> <a href="#" class="action ">Delete this order line</a>
+</span></li>
+        </ul>
+    </td>
+</tr>
+
+
+<tr class="item-service" data-sku="SERVICE CODE HERE">
+    <td><input type="checkbox"/></td>
+    <td class="service">
+        <article class="partial-service-box-landscape media" data-partial="service-box-landscape">
+            <div class="img">
+                <img class="image" src="http://placekitten.com/80" alt="Service image"> <span class="article-id">632423523</span>
+                <span class="label">Service</span>
+            </div>
+            <div class="content">
+                <span class="article-id">632423523</span> <a href="#">Repacking</a> <span class="properties">Repacking of the entire order</span>
+            </div>
+        </article>
+    </td>
+    <td class="value"><span class="type">Service</span> <span class="price">34.00 EUR</span></td>
+</tr>
+
+</tbody>
+</table>
+
+</section>
+
+
+<section class="split-shipments">
+<h2>Orderlines that need ship-to and delivery date</h2>
+
+<table class="partial-article-list partial-article-list-edit" data-partial="article-list article-list-edit">
+<thead class="head">
+<tr class="list-options">
+    <td class="select-all"><input type="checkbox"/></td>
+    <td class="actions" colspan="2">
+
+
+        <span class="partial-ajax-action partial-ajax-tooltip-select" data-partial="ajax-action ajax-tooltip-select"
+              data-url-post="POST-SELECTED-SHOPPING-LIST-URL-HERE">
+
+<span class="partial-tooltip select is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    <select name=""></select>
+    <a class="button ok" href="#">Ok</a>
+    <a class="cancel" href="#">Cancel</a>
+
+  </span>
+</span>
+</span>
+
+<span class="partial-tooltip error is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    Unknown error
+
+  </span>
+</span>
+</span> <a href="#" class="action button">Save to shopping list</a></span>
+
+
+
+
+
+
+
+<span class="partial-ajax-action partial-ajax-tooltip-confirm delete" data-url-post="" data-post-data=""
+      data-partial="ajax-action ajax-tooltip-confirm"
+      data-url-delete="URL HERE" data-delete-data="">
+
+<span class="partial-tooltip confirm is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    Are you sure?
+    <a class='button yes' href='#'>Yes</a>
+    <a class='cancel' href='#'>Cancel</a>
+
+  </span>
+</span>
+</span>
+
+<span class="partial-tooltip error is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    Unknown error
+
+  </span>
+</span>
+</span> <a href="#" class="action button">Delete</a>
+</span><a href="#" class="button split-shipping">Set ship-to and date</a>
+
+
+        <form class="partial-form partial-form-submit is-hidden split-shipping-address" method="post" commandName=""
+              data-partial="form form-submit"
+              data-url-post="URL TO SPLIT SHIP DELIVERY HERE AND INCLUDE NEEDED DATA">
+
+
+            <div class="partial-alert-box alert alert-warning submit-unsaved is-hidden" data-partial="alert-box">
+                <button type="button" class="close">×</button>
+                <div class="content">
+
+                    <strong>Warning!</strong> You have unsaved changes.
+
+                </div>
+            </div>
+
+
+            <div class="partial-alert-box alert alert-info submit-saving is-hidden" data-partial="alert-box">
+                <button type="button" class="close">×</button>
+                <div class="content">
+
+                    <strong>Saving...</strong>
+
+                </div>
+            </div>
+
+
+            <div class="partial-alert-box alert alert-success submit-saved is-hidden" data-partial="alert-box">
+                <button type="button" class="close">×</button>
+                <div class="content">
+
+                    <strong>Success!</strong> Your changes have been saved successfully.
+
+                </div>
+            </div>
+
+
+            <div class="partial-alert-box alert alert-error submit-error is-hidden" data-partial="alert-box">
+                <button type="button" class="close">×</button>
+                <div class="content">
+
+                    <strong>Error!</strong> An unknown error occurred. Please try again.
+
+                </div>
+            </div>
+
+
+            <section class="partial-checkout-address " data-partial="checkout-address">
+
+
+                <fieldset class="is-selected-address">
+                    <section class="partial-form-field partial-form-select " data-partial="form-field form-select">
+                        <label for="">Ship-to address</label>
+                        <select
+                                name="selectedaddress"
+                                >
+                            <option>Volvo loading bay A</option>
+                            <option>Volvo loading bay B</option>
+                            <option>Volvo loading bay C</option>
+                        </select>
+                        <span class="extra-info"><i class='icon-search icon-large'></i></span>
+                    </section>
+                </fieldset>
+
+
+            </section>
+
+
+            <section class="partial-form-field partial-form-date  " data-partial="form-field form-date"
+
+
+                    >
+                <label for="">Delivery date *</label>
+                <input type="text"
+
+                       name="deliverydate"
+
+
+                       required
+
+
+                        />
+                <span class="extra-info"></span>
+            </section>
+
+
+            <div class="submit-wrapper">
+                <button type="submit" class="save-changes is-validated" disabled data-loading-text="Saving..."
+                        data-unsaved-text="Save changes" data-idle-text="No changes"></button>
+            </div>
+
+        </form>
+        <label class="views">
+            <input type="checkbox"/>
+            <span class="checkbox-text">Compact list</span>
+        </label>
+    </td>
+</tr>
+
+<tr class="sort">
+    <td></td>
+    <td class="article"><a href="#" class="not-linked">Article</a></td>
+    <td class="value"><a href="#" class="not-linked">Value</a></td>
+</tr>
+</thead>
+
+<tbody class="body">
+<tr class="item-article" data-articlecode="ARTICLE CODE" data-entrynr="ENTRY NUMBER">
+    <td><input type="checkbox"/></td>
+    <td class="article">
+        <article class="partial-article-box-landscape media" data-partial="article-box-landscape">
+            <div class="img">
+                <img class="image" src="http://placekitten.com/80" alt="Product image">
+            </div>
+            <div class="content">
+                <a href="#" class="article-id">SKU: 88036955</a>
+                <span class="name">MultiArt Matt</span>
+                <span class="properties">weight: 115 g/m2, size 320x450</span>
+            </div>
+        </article>
+    </td>
+    <td class="value">
+        <ul class="actions-list hide-on-small">
+            <li>Add:</li>
+            <li><a href="#">Punching</a></li>
+            <li><a href="#">Renaming</a></li>
+            <li><a href="#">Repacking</a></li>
+            <li><a href="#">Cutting/slicing</a></li>
+            <li>
+
+
+
+
+
+
+
+
+<span class="partial-ajax-action partial-ajax-tooltip-input " data-url-post="URL HERE TO WEB API, INCLUDE NEEDED INFO"
+      data-post-data="" data-partial="ajax-action ajax-tooltip-input">
+
+<span class="partial-tooltip select is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    <input type="text" class="edit" name="" value=""/>
+    <a class="button ok" href="#">Ok</a>
+    <a class="cancel" href="#">Cancel</a>
+
+  </span>
+</span>
+</span>
+
+<span class="partial-tooltip error is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    Unknown error
+
+  </span>
+</span>
+</span> <a href="#" class="action "> Note </a>
+</span></li>
+        </ul>
+        <span class="quantity"><i class="icon-edit"></i> <a href="#">4 boxes (1000 sheets)</a></span> <span
+            class="price"><del>46.52</del> 43.47</span> EUR
+
+
+        <section class="partial-article-quantity-picker " data-partial="article-quantity-picker"
+                 data-get-url="URL-TO-WEB-API-HERE (it should include needed info, like SKU)" data-sku=""
+                 data-price-info="">
+
+
+            <div class="partial-alert-box alert alert-error error is-hidden" data-partial="alert-box">
+                <button type="button" class="close">×</button>
+                <div class="content">
+                    Connection problem. Please try again.
+                </div>
+            </div>
+
+
+            <div class="body clearfix is-hidden">
+                <form class="quantity-selection full-width validate loading">
+                    <label>Amount: </label>
+                    <!-- 		<div class="quantity-input">  -->
+                    <input type="number" min="1" name="quantity-value" class="quantity-value" required disabled>
+                    <select name="quantity-unit" class="quantity-unit" required disabled>
+                        <option value="" selected="selected"></option>
+                    </select>
+                    <!-- 		</div> -->
+                </form>
+
+                <section class="article-summary full-width is-hidden">
+                    <span class="sku-text">SKU: <span class="sku-id"></span></span>
+
+                    <div class="extra">
+                        <i class="icon-time icon-large"></i> <i class="icon-star-empty icon-large"></i> <span
+                            class="in-contract badge is-hidden">In contract</span>
+                    </div>
+                </section>
+
+                <section class="article-price half-width first-col">
+                    <!--<span class="amount">2 pallets</span>-->
+                    &nbsp;
+                    <!-- HACK: Completely empty elements don't get any width/height and screws up the layout. This section starts empty. -->
+                    <span class="price is-hidden"><span class="price-number"></span> EUR</span> <span
+                        class="discount is-hidden">Save <span class="discount-amount"></span> EUR by ordering <span
+                        class="discount-next"></span>.
+      </span>
+                </section>
+
+                <section class="article-shop buy half-width">
+
+
+
+
+
+
+
+
+
+<span class="partial-ajax-action partial-ajax-simple-action clearfix" data-url-post="POST-URL-HERE" data-post-data=""
+      data-partial="ajax-action ajax-simple-action">
+
+<span class="partial-tooltip error is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content"> Unknown error
+  </span>
+</span>
+</span> <a href="#" class="action add-to-cart disabled button"><i class='icon-shopping-cart icon-large'></i> Add to cart</a></span>
+
+
+
+
+
+
+
+
+
+<span class="partial-ajax-action partial-ajax-tooltip-select clearfix" data-url-get="ENTER-GET-SHOPPING-LIST-URL-HERE"
+      data-url-post="POST-URL-HERE" data-partial="ajax-action ajax-tooltip-select">
+
+<span class="partial-tooltip select is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    <select name=""></select>
+    <a class="button ok" href="#">Ok</a>
+    <a class="cancel" href="#">Cancel</a>
+
+  </span>
+</span>
+</span>
+
+<span class="partial-tooltip error is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    Unknown error
+
+  </span>
+</span>
+</span> <a href="#" class="action add-to-list disabled button">Add to list <i class='icon-share-alt'></i></a></span>
+
+
+                </section>
+
+            </div>
+        </section>
+    </td>
+</tr>
+<tr class="item-article-notices">
+    <td></td>
+    <td class="notices" colspan="2"><span class="note">Please note: This article is non-refundable. <a href="#">More
+        info</a></span>
+    <td>
+</tr>
+<tr class="item-article-service">
+    <!-- Only render this article-service block if there is a service attached to the above article -->
+    <td></td>
+    <td class="service" colspan="2">
+        <div class="wrapper">
+            <span class="name">Added service: Cutting<span
+                    class="properties">: 322 mm x 442 mm, cross fiber</span></span> <span class="price">2.00 EUR</span>
+        </div>
+    </td>
+</tr>
+<tr class="item-article" data-articlecode="ARTICLE CODE" data-entrynr="ENTRY NUMBER">
+    <td><input type="checkbox"/></td>
+    <td class="article">
+        <article class="partial-article-box-landscape media" data-partial="article-box-landscape">
+            <div class="img">
+                <img class="image" src="http://placekitten.com/80" alt="Product image">
+            </div>
+            <div class="content">
+                <a href="#" class="article-id">SKU: 88036955</a>
+                <span class="name">MultiArt Matt</span>
+                <span class="properties">weight: 115 g/m2, size 320x450</span>
+            </div>
+        </article>
+    </td>
+    <td class="value">
+        <ul class="actions-list hide-on-small">
+            <li>Add:</li>
+            <li><a href="#">Punching</a></li>
+            <li><a href="#">Renaming</a></li>
+            <li><a href="#">Repacking</a></li>
+            <li><a href="#">Cutting/slicing</a></li>
+            <li>
+
+
+
+
+
+
+
+
+<span class="partial-ajax-action partial-ajax-tooltip-input " data-url-post="URL HERE TO WEB API, INCLUDE NEEDED INFO"
+      data-post-data="" data-partial="ajax-action ajax-tooltip-input">
+
+<span class="partial-tooltip select is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    <input type="text" class="edit" name="" value=""/>
+    <a class="button ok" href="#">Ok</a>
+    <a class="cancel" href="#">Cancel</a>
+
+  </span>
+</span>
+</span>
+
+<span class="partial-tooltip error is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    Unknown error
+
+  </span>
+</span>
+</span> <a href="#" class="action "> Note </a>
+</span></li>
+        </ul>
+        <span class="quantity"><i class="icon-edit"></i> <a href="#">4 boxes (1000 sheets)</a></span> <span
+            class="price"><del>46.52</del> 43.47</span> EUR
+
+
+        <section class="partial-article-quantity-picker " data-partial="article-quantity-picker"
+                 data-get-url="URL-TO-WEB-API-HERE (it should include needed info, like SKU)" data-sku=""
+                 data-price-info="">
+
+
+            <div class="partial-alert-box alert alert-error error is-hidden" data-partial="alert-box">
+                <button type="button" class="close">×</button>
+                <div class="content">
+                    Connection problem. Please try again.
+                </div>
+            </div>
+
+
+            <div class="body clearfix is-hidden">
+                <form class="quantity-selection full-width validate loading">
+                    <label>Amount: </label>
+                    <!-- 		<div class="quantity-input">  -->
+                    <input type="number" min="1" name="quantity-value" class="quantity-value" required disabled>
+                    <select name="quantity-unit" class="quantity-unit" required disabled>
+                        <option value="" selected="selected"></option>
+                    </select>
+                    <!-- 		</div> -->
+                </form>
+
+                <section class="article-summary full-width is-hidden">
+                    <span class="sku-text">SKU: <span class="sku-id"></span></span>
+
+                    <div class="extra">
+                        <i class="icon-time icon-large"></i> <i class="icon-star-empty icon-large"></i> <span
+                            class="in-contract badge is-hidden">In contract</span>
+                    </div>
+                </section>
+
+                <section class="article-price half-width first-col">
+                    <!--<span class="amount">2 pallets</span>-->
+                    &nbsp;
+                    <!-- HACK: Completely empty elements don't get any width/height and screws up the layout. This section starts empty. -->
+                    <span class="price is-hidden"><span class="price-number"></span> EUR</span> <span
+                        class="discount is-hidden">Save <span class="discount-amount"></span> EUR by ordering <span
+                        class="discount-next"></span>.
+      </span>
+                </section>
+
+                <section class="article-shop buy half-width">
+
+
+
+
+
+
+
+
+
+<span class="partial-ajax-action partial-ajax-simple-action clearfix" data-url-post="POST-URL-HERE" data-post-data=""
+      data-partial="ajax-action ajax-simple-action">
+
+<span class="partial-tooltip error is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content"> Unknown error
+  </span>
+</span>
+</span> <a href="#" class="action add-to-cart disabled button"><i class='icon-shopping-cart icon-large'></i> Add to cart</a></span>
+
+
+
+
+
+
+
+
+
+<span class="partial-ajax-action partial-ajax-tooltip-select clearfix" data-url-get="ENTER-GET-SHOPPING-LIST-URL-HERE"
+      data-url-post="POST-URL-HERE" data-partial="ajax-action ajax-tooltip-select">
+
+<span class="partial-tooltip select is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    <select name=""></select>
+    <a class="button ok" href="#">Ok</a>
+    <a class="cancel" href="#">Cancel</a>
+
+  </span>
+</span>
+</span>
+
+<span class="partial-tooltip error is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    Unknown error
+
+  </span>
+</span>
+</span> <a href="#" class="action add-to-list disabled button">Add to list <i class='icon-share-alt'></i></a></span>
+
+
+                </section>
+
+            </div>
+        </section>
+    </td>
+</tr>
+<tr class="item-article-notices">
+    <td></td>
+    <td class="notices" colspan="2"><span class="note">Please note: This article is non-refundable. <a href="#">More
+        info</a></span>
+    <td>
+</tr>
+<tr class="item-article-service">
+    <!-- Only render this article-service block if there is a service attached to the above article -->
+    <td></td>
+    <td class="service" colspan="2">
+        <div class="wrapper">
+            <span class="name">Added service: Cutting<span
+                    class="properties">: 322 mm x 442 mm, cross fiber</span></span> <span class="price">2.00 EUR</span>
+        </div>
+    </td>
+</tr>
+<tr class="item-article" data-articlecode="ARTICLE CODE" data-entrynr="ENTRY NUMBER">
+    <td><input type="checkbox"/></td>
+    <td class="article">
+        <article class="partial-article-box-landscape media" data-partial="article-box-landscape">
+            <div class="img">
+                <img class="image" src="http://placekitten.com/80" alt="Product image">
+            </div>
+            <div class="content">
+                <a href="#" class="article-id">SKU: 88036955</a>
+                <span class="name">MultiArt Matt</span>
+                <span class="properties">weight: 115 g/m2, size 320x450</span>
+            </div>
+        </article>
+    </td>
+    <td class="value">
+        <ul class="actions-list hide-on-small">
+            <li>Add:</li>
+            <li><a href="#">Punching</a></li>
+            <li><a href="#">Renaming</a></li>
+            <li><a href="#">Repacking</a></li>
+            <li><a href="#">Cutting/slicing</a></li>
+            <li>
+
+
+
+
+
+
+
+
+<span class="partial-ajax-action partial-ajax-tooltip-input " data-url-post="URL HERE TO WEB API, INCLUDE NEEDED INFO"
+      data-post-data="" data-partial="ajax-action ajax-tooltip-input">
+
+<span class="partial-tooltip select is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    <input type="text" class="edit" name="" value=""/>
+    <a class="button ok" href="#">Ok</a>
+    <a class="cancel" href="#">Cancel</a>
+
+  </span>
+</span>
+</span>
+
+<span class="partial-tooltip error is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    Unknown error
+
+  </span>
+</span>
+</span> <a href="#" class="action "> Note </a>
+</span></li>
+        </ul>
+        <span class="quantity"><i class="icon-edit"></i> <a href="#">4 boxes (1000 sheets)</a></span> <span
+            class="price"><del>46.52</del> 43.47</span> EUR
+
+
+        <section class="partial-article-quantity-picker " data-partial="article-quantity-picker"
+                 data-get-url="URL-TO-WEB-API-HERE (it should include needed info, like SKU)" data-sku=""
+                 data-price-info="">
+
+
+            <div class="partial-alert-box alert alert-error error is-hidden" data-partial="alert-box">
+                <button type="button" class="close">×</button>
+                <div class="content">
+                    Connection problem. Please try again.
+                </div>
+            </div>
+
+
+            <div class="body clearfix is-hidden">
+                <form class="quantity-selection full-width validate loading">
+                    <label>Amount: </label>
+                    <!-- 		<div class="quantity-input">  -->
+                    <input type="number" min="1" name="quantity-value" class="quantity-value" required disabled>
+                    <select name="quantity-unit" class="quantity-unit" required disabled>
+                        <option value="" selected="selected"></option>
+                    </select>
+                    <!-- 		</div> -->
+                </form>
+
+                <section class="article-summary full-width is-hidden">
+                    <span class="sku-text">SKU: <span class="sku-id"></span></span>
+
+                    <div class="extra">
+                        <i class="icon-time icon-large"></i> <i class="icon-star-empty icon-large"></i> <span
+                            class="in-contract badge is-hidden">In contract</span>
+                    </div>
+                </section>
+
+                <section class="article-price half-width first-col">
+                    <!--<span class="amount">2 pallets</span>-->
+                    &nbsp;
+                    <!-- HACK: Completely empty elements don't get any width/height and screws up the layout. This section starts empty. -->
+                    <span class="price is-hidden"><span class="price-number"></span> EUR</span> <span
+                        class="discount is-hidden">Save <span class="discount-amount"></span> EUR by ordering <span
+                        class="discount-next"></span>.
+      </span>
+                </section>
+
+                <section class="article-shop buy half-width">
+
+
+
+
+
+
+
+
+
+<span class="partial-ajax-action partial-ajax-simple-action clearfix" data-url-post="POST-URL-HERE" data-post-data=""
+      data-partial="ajax-action ajax-simple-action">
+
+<span class="partial-tooltip error is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content"> Unknown error
+  </span>
+</span>
+</span> <a href="#" class="action add-to-cart disabled button"><i class='icon-shopping-cart icon-large'></i> Add to cart</a></span>
+
+
+
+
+
+
+
+
+
+<span class="partial-ajax-action partial-ajax-tooltip-select clearfix" data-url-get="ENTER-GET-SHOPPING-LIST-URL-HERE"
+      data-url-post="POST-URL-HERE" data-partial="ajax-action ajax-tooltip-select">
+
+<span class="partial-tooltip select is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    <select name=""></select>
+    <a class="button ok" href="#">Ok</a>
+    <a class="cancel" href="#">Cancel</a>
+
+  </span>
+</span>
+</span>
+
+<span class="partial-tooltip error is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    Unknown error
+
+  </span>
+</span>
+</span> <a href="#" class="action add-to-list disabled button">Add to list <i class='icon-share-alt'></i></a></span>
+
+
+                </section>
+
+            </div>
+        </section>
+    </td>
+</tr>
+<tr class="item-article-notices">
+    <td></td>
+    <td class="notices" colspan="2"><span class="note">Please note: This article is non-refundable. <a href="#">More
+        info</a></span>
+    <td>
+</tr>
+<tr class="item-article-service">
+    <!-- Only render this article-service block if there is a service attached to the above article -->
+    <td></td>
+    <td class="service" colspan="2">
+        <div class="wrapper">
+            <span class="name">Added service: Cutting<span
+                    class="properties">: 322 mm x 442 mm, cross fiber</span></span> <span class="price">2.00 EUR</span>
+        </div>
+    </td>
+</tr>
+<tr class="item-article" data-articlecode="ARTICLE CODE" data-entrynr="ENTRY NUMBER">
+    <td><input type="checkbox"/></td>
+    <td class="article">
+        <article class="partial-article-box-landscape media" data-partial="article-box-landscape">
+            <div class="img">
+                <img class="image" src="http://placekitten.com/80" alt="Product image">
+            </div>
+            <div class="content">
+                <a href="#" class="article-id">SKU: 88036955</a>
+                <span class="name">MultiArt Matt</span>
+                <span class="properties">weight: 115 g/m2, size 320x450</span>
+            </div>
+        </article>
+    </td>
+    <td class="value">
+        <ul class="actions-list hide-on-small">
+            <li>Add:</li>
+            <li><a href="#">Punching</a></li>
+            <li><a href="#">Renaming</a></li>
+            <li><a href="#">Repacking</a></li>
+            <li><a href="#">Cutting/slicing</a></li>
+            <li>
+
+
+
+
+
+
+
+
+<span class="partial-ajax-action partial-ajax-tooltip-input " data-url-post="URL HERE TO WEB API, INCLUDE NEEDED INFO"
+      data-post-data="" data-partial="ajax-action ajax-tooltip-input">
+
+<span class="partial-tooltip select is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    <input type="text" class="edit" name="" value=""/>
+    <a class="button ok" href="#">Ok</a>
+    <a class="cancel" href="#">Cancel</a>
+
+  </span>
+</span>
+</span>
+
+<span class="partial-tooltip error is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    Unknown error
+
+  </span>
+</span>
+</span> <a href="#" class="action "> Note </a>
+</span></li>
+        </ul>
+        <span class="quantity"><i class="icon-edit"></i> <a href="#">4 boxes (1000 sheets)</a></span> <span
+            class="price"><del>46.52</del> 43.47</span> EUR
+
+
+        <section class="partial-article-quantity-picker " data-partial="article-quantity-picker"
+                 data-get-url="URL-TO-WEB-API-HERE (it should include needed info, like SKU)" data-sku=""
+                 data-price-info="">
+
+
+            <div class="partial-alert-box alert alert-error error is-hidden" data-partial="alert-box">
+                <button type="button" class="close">×</button>
+                <div class="content">
+                    Connection problem. Please try again.
+                </div>
+            </div>
+
+
+            <div class="body clearfix is-hidden">
+                <form class="quantity-selection full-width validate loading">
+                    <label>Amount: </label>
+                    <!-- 		<div class="quantity-input">  -->
+                    <input type="number" min="1" name="quantity-value" class="quantity-value" required disabled>
+                    <select name="quantity-unit" class="quantity-unit" required disabled>
+                        <option value="" selected="selected"></option>
+                    </select>
+                    <!-- 		</div> -->
+                </form>
+
+                <section class="article-summary full-width is-hidden">
+                    <span class="sku-text">SKU: <span class="sku-id"></span></span>
+
+                    <div class="extra">
+                        <i class="icon-time icon-large"></i> <i class="icon-star-empty icon-large"></i> <span
+                            class="in-contract badge is-hidden">In contract</span>
+                    </div>
+                </section>
+
+                <section class="article-price half-width first-col">
+                    <!--<span class="amount">2 pallets</span>-->
+                    &nbsp;
+                    <!-- HACK: Completely empty elements don't get any width/height and screws up the layout. This section starts empty. -->
+                    <span class="price is-hidden"><span class="price-number"></span> EUR</span> <span
+                        class="discount is-hidden">Save <span class="discount-amount"></span> EUR by ordering <span
+                        class="discount-next"></span>.
+      </span>
+                </section>
+
+                <section class="article-shop buy half-width">
+
+
+
+
+
+
+
+
+
+<span class="partial-ajax-action partial-ajax-simple-action clearfix" data-url-post="POST-URL-HERE" data-post-data=""
+      data-partial="ajax-action ajax-simple-action">
+
+<span class="partial-tooltip error is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content"> Unknown error
+  </span>
+</span>
+</span> <a href="#" class="action add-to-cart disabled button"><i class='icon-shopping-cart icon-large'></i> Add to cart</a></span>
+
+
+
+
+
+
+
+
+
+<span class="partial-ajax-action partial-ajax-tooltip-select clearfix" data-url-get="ENTER-GET-SHOPPING-LIST-URL-HERE"
+      data-url-post="POST-URL-HERE" data-partial="ajax-action ajax-tooltip-select">
+
+<span class="partial-tooltip select is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    <select name=""></select>
+    <a class="button ok" href="#">Ok</a>
+    <a class="cancel" href="#">Cancel</a>
+
+  </span>
+</span>
+</span>
+
+<span class="partial-tooltip error is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    Unknown error
+
+  </span>
+</span>
+</span> <a href="#" class="action add-to-list disabled button">Add to list <i class='icon-share-alt'></i></a></span>
+
+
+                </section>
+
+            </div>
+        </section>
+    </td>
+</tr>
+<tr class="item-article-notices">
+    <td></td>
+    <td class="notices" colspan="2"><span class="note">Please note: This article is non-refundable. <a href="#">More
+        info</a></span>
+    <td>
+</tr>
+<tr class="item-article-service">
+    <!-- Only render this article-service block if there is a service attached to the above article -->
+    <td></td>
+    <td class="service" colspan="2">
+        <div class="wrapper">
+            <span class="name">Added service: Cutting<span
+                    class="properties">: 322 mm x 442 mm, cross fiber</span></span> <span class="price">2.00 EUR</span>
+        </div>
+    </td>
+</tr>
+<tr class="item-article" data-articlecode="ARTICLE CODE" data-entrynr="ENTRY NUMBER">
+    <td><input type="checkbox"/></td>
+    <td class="article">
+        <article class="partial-article-box-landscape media" data-partial="article-box-landscape">
+            <div class="img">
+                <img class="image" src="http://placekitten.com/80" alt="Product image">
+            </div>
+            <div class="content">
+                <a href="#" class="article-id">SKU: 88036955</a>
+                <span class="name">MultiArt Matt</span>
+                <span class="properties">weight: 115 g/m2, size 320x450</span>
+            </div>
+        </article>
+    </td>
+    <td class="value">
+        <ul class="actions-list hide-on-small">
+            <li>Add:</li>
+            <li><a href="#">Punching</a></li>
+            <li><a href="#">Renaming</a></li>
+            <li><a href="#">Repacking</a></li>
+            <li><a href="#">Cutting/slicing</a></li>
+            <li>
+
+
+
+
+
+
+
+
+<span class="partial-ajax-action partial-ajax-tooltip-input " data-url-post="URL HERE TO WEB API, INCLUDE NEEDED INFO"
+      data-post-data="" data-partial="ajax-action ajax-tooltip-input">
+
+<span class="partial-tooltip select is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    <input type="text" class="edit" name="" value=""/>
+    <a class="button ok" href="#">Ok</a>
+    <a class="cancel" href="#">Cancel</a>
+
+  </span>
+</span>
+</span>
+
+<span class="partial-tooltip error is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    Unknown error
+
+  </span>
+</span>
+</span> <a href="#" class="action "> Note </a>
+</span></li>
+        </ul>
+        <span class="quantity"><i class="icon-edit"></i> <a href="#">4 boxes (1000 sheets)</a></span> <span
+            class="price"><del>46.52</del> 43.47</span> EUR
+
+
+        <section class="partial-article-quantity-picker " data-partial="article-quantity-picker"
+                 data-get-url="URL-TO-WEB-API-HERE (it should include needed info, like SKU)" data-sku=""
+                 data-price-info="">
+
+
+            <div class="partial-alert-box alert alert-error error is-hidden" data-partial="alert-box">
+                <button type="button" class="close">×</button>
+                <div class="content">
+                    Connection problem. Please try again.
+                </div>
+            </div>
+
+
+            <div class="body clearfix is-hidden">
+                <form class="quantity-selection full-width validate loading">
+                    <label>Amount: </label>
+                    <!-- 		<div class="quantity-input">  -->
+                    <input type="number" min="1" name="quantity-value" class="quantity-value" required disabled>
+                    <select name="quantity-unit" class="quantity-unit" required disabled>
+                        <option value="" selected="selected"></option>
+                    </select>
+                    <!-- 		</div> -->
+                </form>
+
+                <section class="article-summary full-width is-hidden">
+                    <span class="sku-text">SKU: <span class="sku-id"></span></span>
+
+                    <div class="extra">
+                        <i class="icon-time icon-large"></i> <i class="icon-star-empty icon-large"></i> <span
+                            class="in-contract badge is-hidden">In contract</span>
+                    </div>
+                </section>
+
+                <section class="article-price half-width first-col">
+                    <!--<span class="amount">2 pallets</span>-->
+                    &nbsp;
+                    <!-- HACK: Completely empty elements don't get any width/height and screws up the layout. This section starts empty. -->
+                    <span class="price is-hidden"><span class="price-number"></span> EUR</span> <span
+                        class="discount is-hidden">Save <span class="discount-amount"></span> EUR by ordering <span
+                        class="discount-next"></span>.
+      </span>
+                </section>
+
+                <section class="article-shop buy half-width">
+
+
+
+
+
+
+
+
+
+<span class="partial-ajax-action partial-ajax-simple-action clearfix" data-url-post="POST-URL-HERE" data-post-data=""
+      data-partial="ajax-action ajax-simple-action">
+
+<span class="partial-tooltip error is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content"> Unknown error
+  </span>
+</span>
+</span> <a href="#" class="action add-to-cart disabled button"><i class='icon-shopping-cart icon-large'></i> Add to cart</a></span>
+
+
+
+
+
+
+
+
+
+<span class="partial-ajax-action partial-ajax-tooltip-select clearfix" data-url-get="ENTER-GET-SHOPPING-LIST-URL-HERE"
+      data-url-post="POST-URL-HERE" data-partial="ajax-action ajax-tooltip-select">
+
+<span class="partial-tooltip select is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    <select name=""></select>
+    <a class="button ok" href="#">Ok</a>
+    <a class="cancel" href="#">Cancel</a>
+
+  </span>
+</span>
+</span>
+
+<span class="partial-tooltip error is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    Unknown error
+
+  </span>
+</span>
+</span> <a href="#" class="action add-to-list disabled button">Add to list <i class='icon-share-alt'></i></a></span>
+
+
+                </section>
+
+            </div>
+        </section>
+    </td>
+</tr>
+<tr class="item-article-notices">
+    <td></td>
+    <td class="notices" colspan="2"><span class="note">Please note: This article is non-refundable. <a href="#">More
+        info</a></span>
+    <td>
+</tr>
+<tr class="item-article-service">
+    <!-- Only render this article-service block if there is a service attached to the above article -->
+    <td></td>
+    <td class="service" colspan="2">
+        <div class="wrapper">
+            <span class="name">Added service: Cutting<span
+                    class="properties">: 322 mm x 442 mm, cross fiber</span></span> <span class="price">2.00 EUR</span>
+        </div>
+    </td>
+</tr>
+<tr class="item-service">
+    <td><input type="checkbox"/></td>
+    <td class="service">
+        <article class="partial-service-box-landscape media" data-partial="service-box-landscape">
+            <div class="img">
+                <img class="image" src="http://placekitten.com/80" alt="Service image"> <span class="article-id">632423523</span>
+                <span class="label">Service</span>
+            </div>
+            <div class="content">
+                <span class="article-id">632423523</span> <a href="#">Repacking</a> <span class="properties">Repacking of the entire order</span>
+            </div>
+        </article>
+    </td>
+    <td class="value"><span class="type">Service</span> <span class="price">34.00 EUR</span></td>
+</tr>
+<tr class="item-service">
+    <td><input type="checkbox"/></td>
+    <td class="service">
+        <article class="partial-service-box-landscape media" data-partial="service-box-landscape">
+            <div class="img">
+                <img class="image" src="http://placekitten.com/80" alt="Service image"> <span class="article-id">632423523</span>
+                <span class="label">Service</span>
+            </div>
+            <div class="content">
+                <span class="article-id">632423523</span> <a href="#">Repacking</a> <span class="properties">Repacking of the entire order</span>
+            </div>
+        </article>
+    </td>
+    <td class="value"><span class="type">Service</span> <span class="price">34.00 EUR</span></td>
+</tr>
+</tbody>
+</table>
+
+</section>
+
+
+<section class="delivery-package">
+<h2>Delivery: 2012-06-12</h2>
+
+<table class="partial-article-list partial-article-list-edit" data-partial="article-list article-list-edit">
+<thead class="head">
+<tr class="list-options">
+    <td class="select-all"><input type="checkbox"/></td>
+    <td class="actions" colspan="2">
+
+
+
+
+
+
+
+<span class="partial-ajax-action partial-ajax-tooltip-select add-to-list" data-url-get="GET-SHOPPING-LIST-AJAX-URL"
+      data-partial="ajax-action ajax-tooltip-select"
+      data-url-post="POST-SELECTED-SHOPPING-LIST-URL-HERE">
+
+<span class="partial-tooltip select is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    <select name=""></select>
+    <a class="button ok" href="#">Ok</a>
+    <a class="cancel" href="#">Cancel</a>
+
+  </span>
+</span>
+</span>
+
+<span class="partial-tooltip error is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    Unknown error
+
+  </span>
+</span>
+</span> <a href="#" class="action button">Save to shopping list</a></span>
+
+
+
+
+
+
+
+<span class="partial-ajax-action partial-ajax-tooltip-confirm delete" data-url-post="" data-post-data=""
+      data-partial="ajax-action ajax-tooltip-confirm"
+      data-url-delete="URL HERE" data-delete-data="">
+
+<span class="partial-tooltip confirm is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    Are you sure?
+    <a class='button yes' href='#'>Yes</a>
+    <a class='cancel' href='#'>Cancel</a>
+
+  </span>
+</span>
+</span>
+
+<span class="partial-tooltip error is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    Unknown error
+
+  </span>
+</span>
+</span> <a href="#" class="action button">Delete</a>
+</span><label class="views">
+        <input type="checkbox"/>
+        <span class="checkbox-text">Compact list</span>
+    </label>
+    </td>
+</tr>
+
+<tr class="sort">
+    <td></td>
+    <td class="article"><a href="#" class="not-linked">Article</a></td>
+    <td class="value"><a href="#" class="not-linked">Value</a></td>
+</tr>
+</thead>
+
+<tbody class="body">
+<tr class="item-article" data-articlecode="ARTICLE CODE" data-entrynr="ENTRY NUMBER">
+    <td><input type="checkbox"/></td>
+    <td class="article">
+        <article class="partial-article-box-landscape media" data-partial="article-box-landscape">
+            <div class="img">
+                <img class="image" src="http://placekitten.com/80" alt="Product image">
+            </div>
+            <div class="content">
+                <a href="#" class="article-id">SKU: 88036955</a>
+                <span class="name">MultiArt Matt</span>
+                <span class="properties">weight: 115 g/m2, size 320x450</span>
+            </div>
+        </article>
+    </td>
+    <td class="value">
+        <ul class="actions-list hide-on-small">
+            <li>Add:</li>
+            <li><a href="#">Punching</a></li>
+            <li><a href="#">Renaming</a></li>
+            <li><a href="#">Repacking</a></li>
+            <li><a href="#">Cutting/slicing</a></li>
+            <li>
+
+
+
+
+
+
+
+
+<span class="partial-ajax-action partial-ajax-tooltip-input " data-url-post="URL HERE TO WEB API, INCLUDE NEEDED INFO"
+      data-post-data="" data-partial="ajax-action ajax-tooltip-input">
+
+<span class="partial-tooltip select is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    <input type="text" class="edit" name="" value=""/>
+    <a class="button ok" href="#">Ok</a>
+    <a class="cancel" href="#">Cancel</a>
+
+  </span>
+</span>
+</span>
+
+<span class="partial-tooltip error is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    Unknown error
+
+  </span>
+</span>
+</span> <a href="#" class="action "> Note </a>
+</span></li>
+        </ul>
+        <span class="quantity"><i class="icon-edit"></i> <a href="#">4 boxes (1000 sheets)</a></span> <span
+            class="price"><del>46.52</del> 43.47</span> EUR
+
+
+        <section class="partial-article-quantity-picker " data-partial="article-quantity-picker"
+                 data-get-url="URL-TO-WEB-API-HERE (it should include needed info, like SKU)" data-sku=""
+                 data-price-info="">
+
+
+            <div class="partial-alert-box alert alert-error error is-hidden" data-partial="alert-box">
+                <button type="button" class="close">×</button>
+                <div class="content">
+                    Connection problem. Please try again.
+                </div>
+            </div>
+
+
+            <div class="body clearfix is-hidden">
+                <form class="quantity-selection full-width validate loading">
+                    <label>Amount: </label>
+                    <!-- 		<div class="quantity-input">  -->
+                    <input type="number" min="1" name="quantity-value" class="quantity-value" required disabled>
+                    <select name="quantity-unit" class="quantity-unit" required disabled>
+                        <option value="" selected="selected"></option>
+                    </select>
+                    <!-- 		</div> -->
+                </form>
+
+                <section class="article-summary full-width is-hidden">
+                    <span class="sku-text">SKU: <span class="sku-id"></span></span>
+
+                    <div class="extra">
+                        <i class="icon-time icon-large"></i> <i class="icon-star-empty icon-large"></i> <span
+                            class="in-contract badge is-hidden">In contract</span>
+                    </div>
+                </section>
+
+                <section class="article-price half-width first-col">
+                    <!--<span class="amount">2 pallets</span>-->
+                    &nbsp;
+                    <!-- HACK: Completely empty elements don't get any width/height and screws up the layout. This section starts empty. -->
+                    <span class="price is-hidden"><span class="price-number"></span> EUR</span> <span
+                        class="discount is-hidden">Save <span class="discount-amount"></span> EUR by ordering <span
+                        class="discount-next"></span>.
+      </span>
+                </section>
+
+                <section class="article-shop buy half-width">
+
+
+
+
+
+
+
+
+
+<span class="partial-ajax-action partial-ajax-simple-action clearfix" data-url-post="POST-URL-HERE" data-post-data=""
+      data-partial="ajax-action ajax-simple-action">
+
+<span class="partial-tooltip error is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content"> Unknown error
+  </span>
+</span>
+</span> <a href="#" class="action add-to-cart disabled button"><i class='icon-shopping-cart icon-large'></i> Add to cart</a></span>
+
+
+
+
+
+
+
+
+
+<span class="partial-ajax-action partial-ajax-tooltip-select clearfix" data-url-get="ENTER-GET-SHOPPING-LIST-URL-HERE"
+      data-url-post="POST-URL-HERE" data-partial="ajax-action ajax-tooltip-select">
+
+<span class="partial-tooltip select is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    <select name=""></select>
+    <a class="button ok" href="#">Ok</a>
+    <a class="cancel" href="#">Cancel</a>
+
+  </span>
+</span>
+</span>
+
+<span class="partial-tooltip error is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    Unknown error
+
+  </span>
+</span>
+</span> <a href="#" class="action add-to-list disabled button">Add to list <i class='icon-share-alt'></i></a></span>
+
+
+                </section>
+
+            </div>
+        </section>
+    </td>
+</tr>
+<tr class="item-article-notices">
+    <td></td>
+    <td class="notices" colspan="2"><span class="note">Please note: This article is non-refundable. <a href="#">More
+        info</a></span>
+    <td>
+</tr>
+<tr class="item-article-service">
+    <!-- Only render this article-service block if there is a service attached to the above article -->
+    <td></td>
+    <td class="service" colspan="2">
+        <div class="wrapper">
+            <span class="name">Added service: Cutting<span
+                    class="properties">: 322 mm x 442 mm, cross fiber</span></span> <span class="price">2.00 EUR</span>
+        </div>
+    </td>
+</tr>
+<tr class="item-article" data-articlecode="ARTICLE CODE" data-entrynr="ENTRY NUMBER">
+    <td><input type="checkbox"/></td>
+    <td class="article">
+        <article class="partial-article-box-landscape media" data-partial="article-box-landscape">
+            <div class="img">
+                <img class="image" src="http://placekitten.com/80" alt="Product image">
+            </div>
+            <div class="content">
+                <a href="#" class="article-id">SKU: 88036955</a>
+                <span class="name">MultiArt Matt</span>
+                <span class="properties">weight: 115 g/m2, size 320x450</span>
+            </div>
+        </article>
+    </td>
+    <td class="value">
+        <ul class="actions-list hide-on-small">
+            <li>Add:</li>
+            <li><a href="#">Punching</a></li>
+            <li><a href="#">Renaming</a></li>
+            <li><a href="#">Repacking</a></li>
+            <li><a href="#">Cutting/slicing</a></li>
+            <li>
+
+
+
+
+
+
+
+
+<span class="partial-ajax-action partial-ajax-tooltip-input " data-url-post="URL HERE TO WEB API, INCLUDE NEEDED INFO"
+      data-post-data="" data-partial="ajax-action ajax-tooltip-input">
+
+<span class="partial-tooltip select is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    <input type="text" class="edit" name="" value=""/>
+    <a class="button ok" href="#">Ok</a>
+    <a class="cancel" href="#">Cancel</a>
+
+  </span>
+</span>
+</span>
+
+<span class="partial-tooltip error is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    Unknown error
+
+  </span>
+</span>
+</span> <a href="#" class="action "> Note </a>
+</span></li>
+        </ul>
+        <span class="quantity"><i class="icon-edit"></i> <a href="#">4 boxes (1000 sheets)</a></span> <span
+            class="price"><del>46.52</del> 43.47</span> EUR
+
+
+        <section class="partial-article-quantity-picker " data-partial="article-quantity-picker"
+                 data-get-url="URL-TO-WEB-API-HERE (it should include needed info, like SKU)" data-sku=""
+                 data-price-info="">
+
+            <div class="partial-alert-box alert alert-error error is-hidden" data-partial="alert-box">
+                <button type="button" class="close">×</button>
+                <div class="content">
+                    Connection problem. Please try again.
+                </div>
+            </div>
+
+
+            <div class="body clearfix is-hidden">
+                <form class="quantity-selection full-width validate loading">
+                    <label>Amount: </label>
+                    <!-- 		<div class="quantity-input">  -->
+                    <input type="number" min="1" name="quantity-value" class="quantity-value" required disabled>
+                    <select name="quantity-unit" class="quantity-unit" required disabled>
+                        <option value="" selected="selected"></option>
+                    </select>
+                    <!-- 		</div> -->
+                </form>
+
+                <section class="article-summary full-width is-hidden">
+                    <span class="sku-text">SKU: <span class="sku-id"></span></span>
+
+                    <div class="extra">
+                        <i class="icon-time icon-large"></i> <i class="icon-star-empty icon-large"></i> <span
+                            class="in-contract badge is-hidden">In contract</span>
+                    </div>
+                </section>
+
+                <section class="article-price half-width first-col">
+                    <!--<span class="amount">2 pallets</span>-->
+                    &nbsp;
+                    <!-- HACK: Completely empty elements don't get any width/height and screws up the layout. This section starts empty. -->
+                    <span class="price is-hidden"><span class="price-number"></span> EUR</span> <span
+                        class="discount is-hidden">Save <span class="discount-amount"></span> EUR by ordering <span
+                        class="discount-next"></span>.
+      </span>
+                </section>
+
+                <section class="article-shop buy half-width">
+
+
+
+
+
+
+
+
+
+<span class="partial-ajax-action partial-ajax-simple-action clearfix" data-url-post="POST-URL-HERE" data-post-data=""
+      data-partial="ajax-action ajax-simple-action">
+
+<span class="partial-tooltip error is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content"> Unknown error
+  </span>
+</span>
+</span> <a href="#" class="action add-to-cart disabled button"><i class='icon-shopping-cart icon-large'></i> Add to cart</a></span>
+
+
+
+
+
+
+
+
+
+<span class="partial-ajax-action partial-ajax-tooltip-select clearfix" data-url-get="ENTER-GET-SHOPPING-LIST-URL-HERE"
+      data-url-post="POST-URL-HERE" data-partial="ajax-action ajax-tooltip-select">
+
+<span class="partial-tooltip select is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    <select name=""></select>
+    <a class="button ok" href="#">Ok</a>
+    <a class="cancel" href="#">Cancel</a>
+
+  </span>
+</span>
+</span>
+
+<span class="partial-tooltip error is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    Unknown error
+
+  </span>
+</span>
+</span> <a href="#" class="action add-to-list disabled button">Add to list <i class='icon-share-alt'></i></a></span>
+
+
+                </section>
+
+            </div>
+        </section>
+    </td>
+</tr>
+<tr class="item-article-notices">
+    <td></td>
+    <td class="notices" colspan="2"><span class="note">Please note: This article is non-refundable. <a href="#">More
+        info</a></span>
+    <td>
+</tr>
+<tr class="item-article-service">
+    <!-- Only render this article-service block if there is a service attached to the above article -->
+    <td></td>
+    <td class="service" colspan="2">
+        <div class="wrapper">
+            <span class="name">Added service: Cutting<span
+                    class="properties">: 322 mm x 442 mm, cross fiber</span></span> <span class="price">2.00 EUR</span>
+        </div>
+    </td>
+</tr>
+<tr class="item-article" data-articlecode="ARTICLE CODE" data-entrynr="ENTRY NUMBER">
+    <td><input type="checkbox"/></td>
+    <td class="article">
+        <article class="partial-article-box-landscape media" data-partial="article-box-landscape">
+            <div class="img">
+                <img class="image" src="http://placekitten.com/80" alt="Product image">
+            </div>
+            <div class="content">
+                <a href="#" class="article-id">SKU: 88036955</a>
+                <span class="name">MultiArt Matt</span>
+                <span class="properties">weight: 115 g/m2, size 320x450</span>
+            </div>
+        </article>
+    </td>
+    <td class="value">
+        <ul class="actions-list hide-on-small">
+            <li>Add:</li>
+            <li><a href="#">Punching</a></li>
+            <li><a href="#">Renaming</a></li>
+            <li><a href="#">Repacking</a></li>
+            <li><a href="#">Cutting/slicing</a></li>
+            <li>
+
+
+
+
+
+
+
+
+<span class="partial-ajax-action partial-ajax-tooltip-input " data-url-post="URL HERE TO WEB API, INCLUDE NEEDED INFO"
+      data-post-data="" data-partial="ajax-action ajax-tooltip-input">
+
+<span class="partial-tooltip select is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    <input type="text" class="edit" name="" value=""/>
+    <a class="button ok" href="#">Ok</a>
+    <a class="cancel" href="#">Cancel</a>
+
+  </span>
+</span>
+</span>
+
+<span class="partial-tooltip error is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    Unknown error
+
+  </span>
+</span>
+</span> <a href="#" class="action "> Note </a>
+</span></li>
+        </ul>
+        <span class="quantity"><i class="icon-edit"></i> <a href="#">4 boxes (1000 sheets)</a></span> <span
+            class="price"><del>46.52</del> 43.47</span> EUR
+
+
+        <section class="partial-article-quantity-picker " data-partial="article-quantity-picker"
+                 data-get-url="URL-TO-WEB-API-HERE (it should include needed info, like SKU)" data-sku=""
+                 data-price-info="">
+
+
+            <div class="partial-alert-box alert alert-error error is-hidden" data-partial="alert-box">
+                <button type="button" class="close">×</button>
+                <div class="content">
+                    Connection problem. Please try again.
+                </div>
+            </div>
+
+
+            <div class="body clearfix is-hidden">
+                <form class="quantity-selection full-width validate loading">
+                    <label>Amount: </label>
+                    <!-- 		<div class="quantity-input">  -->
+                    <input type="number" min="1" name="quantity-value" class="quantity-value" required disabled>
+                    <select name="quantity-unit" class="quantity-unit" required disabled>
+                        <option value="" selected="selected"></option>
+                    </select>
+                    <!-- 		</div> -->
+                </form>
+
+                <section class="article-summary full-width is-hidden">
+                    <span class="sku-text">SKU: <span class="sku-id"></span></span>
+
+                    <div class="extra">
+                        <i class="icon-time icon-large"></i> <i class="icon-star-empty icon-large"></i> <span
+                            class="in-contract badge is-hidden">In contract</span>
+                    </div>
+                </section>
+
+                <section class="article-price half-width first-col">
+                    <!--<span class="amount">2 pallets</span>-->
+                    &nbsp;
+                    <!-- HACK: Completely empty elements don't get any width/height and screws up the layout. This section starts empty. -->
+                    <span class="price is-hidden"><span class="price-number"></span> EUR</span> <span
+                        class="discount is-hidden">Save <span class="discount-amount"></span> EUR by ordering <span
+                        class="discount-next"></span>.
+      </span>
+                </section>
+
+                <section class="article-shop buy half-width">
+
+
+
+
+
+
+
+
+
+<span class="partial-ajax-action partial-ajax-simple-action clearfix" data-url-post="POST-URL-HERE" data-post-data=""
+      data-partial="ajax-action ajax-simple-action">
+
+<span class="partial-tooltip error is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content"> Unknown error
+  </span>
+</span>
+</span> <a href="#" class="action add-to-cart disabled button"><i class='icon-shopping-cart icon-large'></i> Add to cart</a></span>
+
+
+
+
+
+
+
+
+
+<span class="partial-ajax-action partial-ajax-tooltip-select clearfix" data-url-get="ENTER-GET-SHOPPING-LIST-URL-HERE"
+      data-url-post="POST-URL-HERE" data-partial="ajax-action ajax-tooltip-select">
+
+<span class="partial-tooltip select is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    <select name=""></select>
+    <a class="button ok" href="#">Ok</a>
+    <a class="cancel" href="#">Cancel</a>
+
+  </span>
+</span>
+</span>
+
+<span class="partial-tooltip error is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    Unknown error
+
+  </span>
+</span>
+</span> <a href="#" class="action add-to-list disabled button">Add to list <i class='icon-share-alt'></i></a></span>
+
+
+                </section>
+
+            </div>
+        </section>
+    </td>
+</tr>
+<tr class="item-article-notices">
+    <td></td>
+    <td class="notices" colspan="2"><span class="note">Please note: This article is non-refundable. <a href="#">More
+        info</a></span>
+    <td>
+</tr>
+<tr class="item-article-service">
+    <!-- Only render this article-service block if there is a service attached to the above article -->
+    <td></td>
+    <td class="service" colspan="2">
+        <div class="wrapper">
+            <span class="name">Added service: Cutting<span
+                    class="properties">: 322 mm x 442 mm, cross fiber</span></span> <span class="price">2.00 EUR</span>
+        </div>
+    </td>
+</tr>
+<tr class="item-article" data-articlecode="ARTICLE CODE" data-entrynr="ENTRY NUMBER">
+    <td><input type="checkbox"/></td>
+    <td class="article">
+        <article class="partial-article-box-landscape media" data-partial="article-box-landscape">
+            <div class="img">
+                <img class="image" src="http://placekitten.com/80" alt="Product image">
+            </div>
+            <div class="content">
+                <a href="#" class="article-id">SKU: 88036955</a>
+                <span class="name">MultiArt Matt</span>
+                <span class="properties">weight: 115 g/m2, size 320x450</span>
+            </div>
+        </article>
+    </td>
+    <td class="value">
+        <ul class="actions-list hide-on-small">
+            <li>Add:</li>
+            <li><a href="#">Punching</a></li>
+            <li><a href="#">Renaming</a></li>
+            <li><a href="#">Repacking</a></li>
+            <li><a href="#">Cutting/slicing</a></li>
+            <li>
+
+
+
+
+
+
+
+
+<span class="partial-ajax-action partial-ajax-tooltip-input " data-url-post="URL HERE TO WEB API, INCLUDE NEEDED INFO"
+      data-post-data="" data-partial="ajax-action ajax-tooltip-input">
+
+<span class="partial-tooltip select is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    <input type="text" class="edit" name="" value=""/>
+    <a class="button ok" href="#">Ok</a>
+    <a class="cancel" href="#">Cancel</a>
+
+  </span>
+</span>
+</span>
+
+<span class="partial-tooltip error is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    Unknown error
+
+  </span>
+</span>
+</span> <a href="#" class="action "> Note </a>
+</span></li>
+        </ul>
+        <span class="quantity"><i class="icon-edit"></i> <a href="#">4 boxes (1000 sheets)</a></span> <span
+            class="price"><del>46.52</del> 43.47</span> EUR
+
+
+        <section class="partial-article-quantity-picker " data-partial="article-quantity-picker"
+                 data-get-url="URL-TO-WEB-API-HERE (it should include needed info, like SKU)" data-sku=""
+                 data-price-info="">
+
+
+            <div class="partial-alert-box alert alert-error error is-hidden" data-partial="alert-box">
+                <button type="button" class="close">×</button>
+                <div class="content">
+                    Connection problem. Please try again.
+                </div>
+            </div>
+
+
+            <div class="body clearfix is-hidden">
+                <form class="quantity-selection full-width validate loading">
+                    <label>Amount: </label>
+                    <!-- 		<div class="quantity-input">  -->
+                    <input type="number" min="1" name="quantity-value" class="quantity-value" required disabled>
+                    <select name="quantity-unit" class="quantity-unit" required disabled>
+                        <option value="" selected="selected"></option>
+                    </select>
+                    <!-- 		</div> -->
+                </form>
+
+                <section class="article-summary full-width is-hidden">
+                    <span class="sku-text">SKU: <span class="sku-id"></span></span>
+
+                    <div class="extra">
+                        <i class="icon-time icon-large"></i> <i class="icon-star-empty icon-large"></i> <span
+                            class="in-contract badge is-hidden">In contract</span>
+                    </div>
+                </section>
+
+                <section class="article-price half-width first-col">
+                    <!--<span class="amount">2 pallets</span>-->
+                    &nbsp;
+                    <!-- HACK: Completely empty elements don't get any width/height and screws up the layout. This section starts empty. -->
+                    <span class="price is-hidden"><span class="price-number"></span> EUR</span> <span
+                        class="discount is-hidden">Save <span class="discount-amount"></span> EUR by ordering <span
+                        class="discount-next"></span>.
+      </span>
+                </section>
+
+                <section class="article-shop buy half-width">
+
+
+
+
+
+
+
+
+
+<span class="partial-ajax-action partial-ajax-simple-action clearfix" data-url-post="POST-URL-HERE" data-post-data=""
+      data-partial="ajax-action ajax-simple-action">
+
+<span class="partial-tooltip error is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content"> Unknown error
+  </span>
+</span>
+</span> <a href="#" class="action add-to-cart disabled button"><i class='icon-shopping-cart icon-large'></i> Add to cart</a></span>
+
+
+
+
+
+
+
+
+
+<span class="partial-ajax-action partial-ajax-tooltip-select clearfix" data-url-get="ENTER-GET-SHOPPING-LIST-URL-HERE"
+      data-url-post="POST-URL-HERE" data-partial="ajax-action ajax-tooltip-select">
+
+<span class="partial-tooltip select is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    <select name=""></select>
+    <a class="button ok" href="#">Ok</a>
+    <a class="cancel" href="#">Cancel</a>
+
+  </span>
+</span>
+</span>
+
+<span class="partial-tooltip error is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    Unknown error
+
+  </span>
+</span>
+</span> <a href="#" class="action add-to-list disabled button">Add to list <i class='icon-share-alt'></i></a></span>
+
+
+                </section>
+
+            </div>
+        </section>
+    </td>
+</tr>
+<tr class="item-article-notices">
+    <td></td>
+    <td class="notices" colspan="2"><span class="note">Please note: This article is non-refundable. <a href="#">More
+        info</a></span>
+    <td>
+</tr>
+<tr class="item-article-service">
+    <!-- Only render this article-service block if there is a service attached to the above article -->
+    <td></td>
+    <td class="service" colspan="2">
+        <div class="wrapper">
+            <span class="name">Added service: Cutting<span
+                    class="properties">: 322 mm x 442 mm, cross fiber</span></span> <span class="price">2.00 EUR</span>
+        </div>
+    </td>
+</tr>
+<tr class="item-article" data-articlecode="ARTICLE CODE" data-entrynr="ENTRY NUMBER">
+    <td><input type="checkbox"/></td>
+    <td class="article">
+        <article class="partial-article-box-landscape media" data-partial="article-box-landscape">
+            <div class="img">
+                <img class="image" src="http://placekitten.com/80" alt="Product image">
+            </div>
+            <div class="content">
+                <a href="#" class="article-id">SKU: 88036955</a>
+                <span class="name">MultiArt Matt</span>
+                <span class="properties">weight: 115 g/m2, size 320x450</span>
+            </div>
+        </article>
+    </td>
+    <td class="value">
+        <ul class="actions-list hide-on-small">
+            <li>Add:</li>
+            <li><a href="#">Punching</a></li>
+            <li><a href="#">Renaming</a></li>
+            <li><a href="#">Repacking</a></li>
+            <li><a href="#">Cutting/slicing</a></li>
+            <li>
+
+
+
+
+
+
+
+
+<span class="partial-ajax-action partial-ajax-tooltip-input " data-url-post="URL HERE TO WEB API, INCLUDE NEEDED INFO"
+      data-post-data="" data-partial="ajax-action ajax-tooltip-input">
+
+<span class="partial-tooltip select is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    <input type="text" class="edit" name="" value=""/>
+    <a class="button ok" href="#">Ok</a>
+    <a class="cancel" href="#">Cancel</a>
+
+  </span>
+</span>
+</span>
+
+<span class="partial-tooltip error is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    Unknown error
+
+  </span>
+</span>
+</span> <a href="#" class="action "> Note </a>
+</span></li>
+        </ul>
+        <span class="quantity"><i class="icon-edit"></i> <a href="#">4 boxes (1000 sheets)</a></span> <span
+            class="price"><del>46.52</del> 43.47</span> EUR
+
+
+        <section class="partial-article-quantity-picker " data-partial="article-quantity-picker"
+                 data-get-url="URL-TO-WEB-API-HERE (it should include needed info, like SKU)" data-sku=""
+                 data-price-info="">
+
+
+            <div class="partial-alert-box alert alert-error error is-hidden" data-partial="alert-box">
+                <button type="button" class="close">×</button>
+                <div class="content">
+                    Connection problem. Please try again.
+                </div>
+            </div>
+
+
+            <div class="body clearfix is-hidden">
+                <form class="quantity-selection full-width validate loading">
+                    <label>Amount: </label>
+                    <!-- 		<div class="quantity-input">  -->
+                    <input type="number" min="1" name="quantity-value" class="quantity-value" required disabled>
+                    <select name="quantity-unit" class="quantity-unit" required disabled>
+                        <option value="" selected="selected"></option>
+                    </select>
+                    <!-- 		</div> -->
+                </form>
+
+                <section class="article-summary full-width is-hidden">
+                    <span class="sku-text">SKU: <span class="sku-id"></span></span>
+
+                    <div class="extra">
+                        <i class="icon-time icon-large"></i> <i class="icon-star-empty icon-large"></i> <span
+                            class="in-contract badge is-hidden">In contract</span>
+                    </div>
+                </section>
+
+                <section class="article-price half-width first-col">
+                    <!--<span class="amount">2 pallets</span>-->
+                    &nbsp;
+                    <!-- HACK: Completely empty elements don't get any width/height and screws up the layout. This section starts empty. -->
+                    <span class="price is-hidden"><span class="price-number"></span> EUR</span> <span
+                        class="discount is-hidden">Save <span class="discount-amount"></span> EUR by ordering <span
+                        class="discount-next"></span>.
+      </span>
+                </section>
+
+                <section class="article-shop buy half-width">
+
+
+
+
+
+
+
+
+
+<span class="partial-ajax-action partial-ajax-simple-action clearfix" data-url-post="POST-URL-HERE" data-post-data=""
+      data-partial="ajax-action ajax-simple-action">
+
+<span class="partial-tooltip error is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content"> Unknown error
+  </span>
+</span>
+</span> <a href="#" class="action add-to-cart disabled button"><i class='icon-shopping-cart icon-large'></i> Add to cart</a></span>
+
+
+
+
+
+
+
+
+
+<span class="partial-ajax-action partial-ajax-tooltip-select clearfix" data-url-get="ENTER-GET-SHOPPING-LIST-URL-HERE"
+      data-url-post="POST-URL-HERE" data-partial="ajax-action ajax-tooltip-select">
+
+<span class="partial-tooltip select is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    <select name=""></select>
+    <a class="button ok" href="#">Ok</a>
+    <a class="cancel" href="#">Cancel</a>
+
+  </span>
+</span>
+</span>
+
+<span class="partial-tooltip error is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    Unknown error
+
+  </span>
+</span>
+</span> <a href="#" class="action add-to-list disabled button">Add to list <i class='icon-share-alt'></i></a></span>
+
+
+                </section>
+
+            </div>
+        </section>
+    </td>
+</tr>
+<tr class="item-article-notices">
+    <td></td>
+    <td class="notices" colspan="2"><span class="note">Please note: This article is non-refundable. <a href="#">More
+        info</a></span>
+    <td>
+</tr>
+<tr class="item-article-service">
+    <!-- Only render this article-service block if there is a service attached to the above article -->
+    <td></td>
+    <td class="service" colspan="2">
+        <div class="wrapper">
+            <span class="name">Added service: Cutting<span
+                    class="properties">: 322 mm x 442 mm, cross fiber</span></span> <span class="price">2.00 EUR</span>
+        </div>
+    </td>
+</tr>
+<tr class="item-service">
+    <td><input type="checkbox"/></td>
+    <td class="service">
+        <article class="partial-service-box-landscape media" data-partial="service-box-landscape">
+            <div class="img">
+                <img class="image" src="http://placekitten.com/80" alt="Service image"> <span class="article-id">632423523</span>
+                <span class="label">Service</span>
+            </div>
+            <div class="content">
+                <span class="article-id">632423523</span> <a href="#">Repacking</a> <span class="properties">Repacking of the entire order</span>
+            </div>
+        </article>
+    </td>
+    <td class="value"><span class="type">Service</span> <span class="price">34.00 EUR</span></td>
+</tr>
+<tr class="item-service">
+    <td><input type="checkbox"/></td>
+    <td class="service">
+        <article class="partial-service-box-landscape media" data-partial="service-box-landscape">
+            <div class="img">
+                <img class="image" src="http://placekitten.com/80" alt="Service image"> <span class="article-id">632423523</span>
+                <span class="label">Service</span>
+            </div>
+            <div class="content">
+                <span class="article-id">632423523</span> <a href="#">Repacking</a> <span class="properties">Repacking of the entire order</span>
+            </div>
+        </article>
+    </td>
+    <td class="value"><span class="type">Service</span> <span class="price">34.00 EUR</span></td>
+</tr>
+</tbody>
+</table>
+
+</section>
+
+<section class="delivery-package">
+    <h2>Delivery: 2012-06-12</h2>
+
+    <table class="partial-article-list partial-article-list-edit" data-partial="article-list article-list-edit">
+        <tbody>
+        <tr class="list-options">
+            <td class="select-all"><input type="checkbox"/></td>
+            <td class="actions" colspan="2">
+
+
+                <span class="partial-ajax-action partial-ajax-tooltip-select add-to-list"
+                      data-url-get="GET-SHOPPING-LIST-AJAX-URL"
+                      data-partial="ajax-action ajax-tooltip-select"><span class=" type">Service</span> <span
+                        class="price">34.00 EUR</span></span>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+</section>
+
+<section class="delivery-package">
+<h2>Delivery: 2012-06-12</h2>
+
+<table class="partial-article-list partial-article-list-edit" data-partial="article-list article-list-edit">
+<thead class="head">
+<tr class="list-options">
+    <td class="select-all"><input type="checkbox"/></td>
+    <td class="actions" colspan="2">
+
+
+
+
+
+
+
+<span class="partial-ajax-action partial-ajax-tooltip-select add-to-list" data-url-get="GET-SHOPPING-LIST-AJAX-URL"
+      data-url-post="POST-SELECTED-SHOPPING-LIST-URL-HERE" data-partial="ajax-action ajax-tooltip-select">
+
+<span class="partial-tooltip select is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    <select name=""></select>
+    <a class="button ok" href="#">Ok</a>
+    <a class="cancel" href="#">Cancel</a>
+
+  </span>
+</span>
+</span>
+
+<span class="partial-tooltip error is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    Unknown error
+
+  </span>
+</span>
+</span> <a href="#" class="action button">Save to shopping list</a></span>
+
+
+
+
+
+
+
+<span class="partial-ajax-action partial-ajax-tooltip-confirm delete" data-url-post="" data-post-data=""
+      data-partial="ajax-action ajax-tooltip-confirm"
+      data-url-delete="URL HERE" data-delete-data="">
+
+<span class="partial-tooltip confirm is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    Are you sure?
+    <a class='button yes' href='#'>Yes</a>
+    <a class='cancel' href='#'>Cancel</a>
+
+  </span>
+</span>
+</span>
+
+<span class="partial-tooltip error is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    Unknown error
+
+  </span>
+</span>
+</span> <a href="#" class="action button">Delete</a>
+</span><label class="views">
+        <input type="checkbox"/>
+        <span class="checkbox-text">Compact list</span>
+    </label>
+    </td>
+</tr>
+
+<tr class="sort">
+    <td></td>
+    <td class="article"><a href="#" class="not-linked">Article</a></td>
+    <td class="value"><a href="#" class="not-linked">Value</a></td>
+</tr>
+</thead>
+
+<tbody class="body">
+<tr class="item-article" data-articlecode="ARTICLE CODE" data-entrynr="ENTRY NUMBER">
+    <td><input type="checkbox"/></td>
+    <td class="article">
+        <article class="partial-article-box-landscape media" data-partial="article-box-landscape">
+            <div class="img">
+                <img class="image" src="http://placekitten.com/80" alt="Product image">
+            </div>
+            <div class="content">
+                <a href="#" class="article-id">SKU: 88036955</a>
+                <span class="name">MultiArt Matt</span>
+                <span class="properties">weight: 115 g/m2, size 320x450</span>
+            </div>
+        </article>
+    </td>
+    <td class="value">
+        <ul class="actions-list hide-on-small">
+            <li>Add:</li>
+            <li><a href="#">Punching</a></li>
+            <li><a href="#">Renaming</a></li>
+            <li><a href="#">Repacking</a></li>
+            <li><a href="#">Cutting/slicing</a></li>
+            <li>
+
+
+
+
+
+
+
+
+<span class="partial-ajax-action partial-ajax-tooltip-input " data-url-post="URL HERE TO WEB API, INCLUDE NEEDED INFO"
+      data-post-data="" data-partial="ajax-action ajax-tooltip-input">
+
+<span class="partial-tooltip select is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    <input type="text" class="edit" name="" value=""/>
+    <a class="button ok" href="#">Ok</a>
+    <a class="cancel" href="#">Cancel</a>
+
+  </span>
+</span>
+</span>
+
+<span class="partial-tooltip error is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    Unknown error
+
+  </span>
+</span>
+</span> <a href="#" class="action "> Note </a>
+</span></li>
+        </ul>
+        <span class="quantity"><i class="icon-edit"></i> <a href="#">4 boxes (1000 sheets)</a></span> <span
+            class="price"><del>46.52</del> 43.47</span> EUR
+
+
+        <section class="partial-article-quantity-picker " data-partial="article-quantity-picker"
+                 data-get-url="URL-TO-WEB-API-HERE (it should include needed info, like SKU)" data-sku=""
+                 data-price-info="">
+
+
+            <div class="partial-alert-box alert alert-error error is-hidden" data-partial="alert-box">
+                <button type="button" class="close">×</button>
+                <div class="content">
+                    Connection problem. Please try again.
+                </div>
+            </div>
+
+
+            <div class="body clearfix is-hidden">
+                <form class="quantity-selection full-width validate loading">
+                    <label>Amount: </label>
+                    <!-- 		<div class="quantity-input">  -->
+                    <input type="number" min="1" name="quantity-value" class="quantity-value" required disabled>
+                    <select name="quantity-unit" class="quantity-unit" required disabled>
+                        <option value="" selected="selected"></option>
+                    </select>
+                    <!-- 		</div> -->
+                </form>
+
+                <section class="article-summary full-width is-hidden">
+                    <span class="sku-text">SKU: <span class="sku-id"></span></span>
+
+                    <div class="extra">
+                        <i class="icon-time icon-large"></i> <i class="icon-star-empty icon-large"></i> <span
+                            class="in-contract badge is-hidden">In contract</span>
+                    </div>
+                </section>
+
+                <section class="article-price half-width first-col">
+                    <!--<span class="amount">2 pallets</span>-->
+                    &nbsp;
+                    <!-- HACK: Completely empty elements don't get any width/height and screws up the layout. This section starts empty. -->
+                    <span class="price is-hidden"><span class="price-number"></span> EUR</span> <span
+                        class="discount is-hidden">Save <span class="discount-amount"></span> EUR by ordering <span
+                        class="discount-next"></span>.
+      </span>
+                </section>
+
+                <section class="article-shop buy half-width">
+
+
+
+
+
+
+
+
+
+<span class="partial-ajax-action partial-ajax-simple-action clearfix" data-url-post="POST-URL-HERE" data-post-data=""
+      data-partial="ajax-action ajax-simple-action">
+
+<span class="partial-tooltip error is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content"> Unknown error
+  </span>
+</span>
+</span> <a href="#" class="action add-to-cart disabled button"><i class='icon-shopping-cart icon-large'></i> Add to cart</a></span>
+
+
+
+
+
+
+
+
+
+<span class="partial-ajax-action partial-ajax-tooltip-select clearfix" data-url-get="ENTER-GET-SHOPPING-LIST-URL-HERE"
+      data-url-post="POST-URL-HERE" data-partial="ajax-action ajax-tooltip-select">
+
+<span class="partial-tooltip select is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    <select name=""></select>
+    <a class="button ok" href="#">Ok</a>
+    <a class="cancel" href="#">Cancel</a>
+
+  </span>
+</span>
+</span>
+
+<span class="partial-tooltip error is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    Unknown error
+
+  </span>
+</span>
+</span> <a href="#" class="action add-to-list disabled button">Add to list <i class='icon-share-alt'></i></a></span>
+
+
+                </section>
+
+            </div>
+        </section>
+    </td>
+</tr>
+<tr class="item-article-notices">
+    <td></td>
+    <td class="notices" colspan="2"><span class="note">Please note: This article is non-refundable. <a href="#">More
+        info</a></span>
+    <td>
+</tr>
+<tr class="item-article-service">
+    <!-- Only render this article-service block if there is a service attached to the above article -->
+    <td></td>
+    <td class="service" colspan="2">
+        <div class="wrapper">
+            <span class="name">Added service: Cutting<span
+                    class="properties">: 322 mm x 442 mm, cross fiber</span></span> <span class="price">2.00 EUR</span>
+        </div>
+    </td>
+</tr>
+<tr class="item-article" data-articlecode="ARTICLE CODE" data-entrynr="ENTRY NUMBER">
+    <td><input type="checkbox"/></td>
+    <td class="article">
+        <article class="partial-article-box-landscape media" data-partial="article-box-landscape">
+            <div class="img">
+                <img class="image" src="http://placekitten.com/80" alt="Product image">
+            </div>
+            <div class="content">
+                <a href="#" class="article-id">SKU: 88036955</a>
+                <span class="name">MultiArt Matt</span>
+                <span class="properties">weight: 115 g/m2, size 320x450</span>
+            </div>
+        </article>
+    </td>
+    <td class="value">
+        <ul class="actions-list hide-on-small">
+            <li>Add:</li>
+            <li><a href="#">Punching</a></li>
+            <li><a href="#">Renaming</a></li>
+            <li><a href="#">Repacking</a></li>
+            <li><a href="#">Cutting/slicing</a></li>
+            <li>
+
+
+
+
+
+
+
+
+<span class="partial-ajax-action partial-ajax-tooltip-input " data-url-post="URL HERE TO WEB API, INCLUDE NEEDED INFO"
+      data-post-data="" data-partial="ajax-action ajax-tooltip-input">
+
+<span class="partial-tooltip select is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    <input type="text" class="edit" name="" value=""/>
+    <a class="button ok" href="#">Ok</a>
+    <a class="cancel" href="#">Cancel</a>
+
+  </span>
+</span>
+</span>
+
+<span class="partial-tooltip error is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    Unknown error
+
+  </span>
+</span>
+</span> <a href="#" class="action "> Note </a>
+</span></li>
+        </ul>
+        <span class="quantity"><i class="icon-edit"></i> <a href="#">4 boxes (1000 sheets)</a></span> <span
+            class="price"><del>46.52</del> 43.47</span> EUR
+
+
+        <section class="partial-article-quantity-picker " data-partial="article-quantity-picker"
+                 data-get-url="URL-TO-WEB-API-HERE (it should include needed info, like SKU)" data-sku=""
+                 data-price-info="">
+
+
+            <div class="partial-alert-box alert alert-error error is-hidden" data-partial="alert-box">
+                <button type="button" class="close">×</button>
+                <div class="content">
+                    Connection problem. Please try again.
+                </div>
+            </div>
+
+
+            <div class="body clearfix is-hidden">
+                <form class="quantity-selection full-width validate loading">
+                    <label>Amount: </label>
+                    <!-- 		<div class="quantity-input">  -->
+                    <input type="number" min="1" name="quantity-value" class="quantity-value" required disabled>
+                    <select name="quantity-unit" class="quantity-unit" required disabled>
+                        <option value="" selected="selected"></option>
+                    </select>
+                    <!-- 		</div> -->
+                </form>
+
+                <section class="article-summary full-width is-hidden">
+                    <span class="sku-text">SKU: <span class="sku-id"></span></span>
+
+                    <div class="extra">
+                        <i class="icon-time icon-large"></i> <i class="icon-star-empty icon-large"></i> <span
+                            class="in-contract badge is-hidden">In contract</span>
+                    </div>
+                </section>
+
+                <section class="article-price half-width first-col">
+                    <!--<span class="amount">2 pallets</span>-->
+                    &nbsp;
+                    <!-- HACK: Completely empty elements don't get any width/height and screws up the layout. This section starts empty. -->
+                    <span class="price is-hidden"><span class="price-number"></span> EUR</span> <span
+                        class="discount is-hidden">Save <span class="discount-amount"></span> EUR by ordering <span
+                        class="discount-next"></span>.
+      </span>
+                </section>
+
+                <section class="article-shop buy half-width">
+
+
+
+
+
+
+
+
+
+<span class="partial-ajax-action partial-ajax-simple-action clearfix" data-url-post="POST-URL-HERE" data-post-data=""
+      data-partial="ajax-action ajax-simple-action">
+
+<span class="partial-tooltip error is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content"> Unknown error
+  </span>
+</span>
+</span> <a href="#" class="action add-to-cart disabled button"><i class='icon-shopping-cart icon-large'></i> Add to cart</a></span>
+
+
+
+
+
+
+
+
+
+<span class="partial-ajax-action partial-ajax-tooltip-select clearfix" data-url-get="ENTER-GET-SHOPPING-LIST-URL-HERE"
+      data-url-post="POST-URL-HERE" data-partial="ajax-action ajax-tooltip-select">
+
+<span class="partial-tooltip select is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    <select name=""></select>
+    <a class="button ok" href="#">Ok</a>
+    <a class="cancel" href="#">Cancel</a>
+
+  </span>
+</span>
+</span>
+
+<span class="partial-tooltip error is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    Unknown error
+
+  </span>
+</span>
+</span> <a href="#" class="action add-to-list disabled button">Add to list <i class='icon-share-alt'></i></a></span>
+
+
+                </section>
+
+            </div>
+        </section>
+    </td>
+</tr>
+<tr class="item-article-notices">
+    <td></td>
+    <td class="notices" colspan="2"><span class="note">Please note: This article is non-refundable. <a href="#">More
+        info</a></span>
+    <td>
+</tr>
+<tr class="item-article-service">
+    <!-- Only render this article-service block if there is a service attached to the above article -->
+    <td></td>
+    <td class="service" colspan="2">
+        <div class="wrapper">
+            <span class="name">Added service: Cutting<span
+                    class="properties">: 322 mm x 442 mm, cross fiber</span></span> <span class="price">2.00 EUR</span>
+        </div>
+    </td>
+</tr>
+<tr class="item-article" data-articlecode="ARTICLE CODE" data-entrynr="ENTRY NUMBER">
+    <td><input type="checkbox"/></td>
+    <td class="article">
+        <article class="partial-article-box-landscape media" data-partial="article-box-landscape">
+            <div class="img">
+                <img class="image" src="http://placekitten.com/80" alt="Product image">
+            </div>
+            <div class="content">
+                <a href="#" class="article-id">SKU: 88036955</a>
+                <span class="name">MultiArt Matt</span>
+                <span class="properties">weight: 115 g/m2, size 320x450</span>
+            </div>
+        </article>
+    </td>
+    <td class="value">
+        <ul class="actions-list hide-on-small">
+            <li>Add:</li>
+            <li><a href="#">Punching</a></li>
+            <li><a href="#">Renaming</a></li>
+            <li><a href="#">Repacking</a></li>
+            <li><a href="#">Cutting/slicing</a></li>
+            <li>
+
+
+
+
+
+
+
+
+<span class="partial-ajax-action partial-ajax-tooltip-input " data-url-post="URL HERE TO WEB API, INCLUDE NEEDED INFO"
+      data-post-data="" data-partial="ajax-action ajax-tooltip-input">
+
+<span class="partial-tooltip select is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    <input type="text" class="edit" name="" value=""/>
+    <a class="button ok" href="#">Ok</a>
+    <a class="cancel" href="#">Cancel</a>
+
+  </span>
+</span>
+</span>
+
+<span class="partial-tooltip error is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    Unknown error
+
+  </span>
+</span>
+</span> <a href="#" class="action "> Note </a>
+</span></li>
+        </ul>
+        <span class="quantity"><i class="icon-edit"></i> <a href="#">4 boxes (1000 sheets)</a></span> <span
+            class="price"><del>46.52</del> 43.47</span> EUR
+
+
+        <section class="partial-article-quantity-picker " data-partial="article-quantity-picker"
+                 data-get-url="URL-TO-WEB-API-HERE (it should include needed info, like SKU)" data-sku=""
+                 data-price-info="">
+
+
+            <div class="partial-alert-box alert alert-error error is-hidden" data-partial="alert-box">
+                <button type="button" class="close">×</button>
+                <div class="content">
+                    Connection problem. Please try again.
+                </div>
+            </div>
+
+
+            <div class="body clearfix is-hidden">
+                <form class="quantity-selection full-width validate loading">
+                    <label>Amount: </label>
+                    <!-- 		<div class="quantity-input">  -->
+                    <input type="number" min="1" name="quantity-value" class="quantity-value" required disabled>
+                    <select name="quantity-unit" class="quantity-unit" required disabled>
+                        <option value="" selected="selected"></option>
+                    </select>
+                    <!-- 		</div> -->
+                </form>
+
+                <section class="article-summary full-width is-hidden">
+                    <span class="sku-text">SKU: <span class="sku-id"></span></span>
+
+                    <div class="extra">
+                        <i class="icon-time icon-large"></i> <i class="icon-star-empty icon-large"></i> <span
+                            class="in-contract badge is-hidden">In contract</span>
+                    </div>
+                </section>
+
+                <section class="article-price half-width first-col">
+                    <!--<span class="amount">2 pallets</span>-->
+                    &nbsp;
+                    <!-- HACK: Completely empty elements don't get any width/height and screws up the layout. This section starts empty. -->
+                    <span class="price is-hidden"><span class="price-number"></span> EUR</span> <span
+                        class="discount is-hidden">Save <span class="discount-amount"></span> EUR by ordering <span
+                        class="discount-next"></span>.
+      </span>
+                </section>
+
+                <section class="article-shop buy half-width">
+
+
+
+
+
+
+
+
+
+<span class="partial-ajax-action partial-ajax-simple-action clearfix" data-url-post="POST-URL-HERE" data-post-data=""
+      data-partial="ajax-action ajax-simple-action">
+
+<span class="partial-tooltip error is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content"> Unknown error
+  </span>
+</span>
+</span> <a href="#" class="action add-to-cart disabled button"><i class='icon-shopping-cart icon-large'></i> Add to cart</a></span>
+
+
+
+
+
+
+
+
+
+<span class="partial-ajax-action partial-ajax-tooltip-select clearfix" data-url-get="ENTER-GET-SHOPPING-LIST-URL-HERE"
+      data-url-post="POST-URL-HERE" data-partial="ajax-action ajax-tooltip-select">
+
+<span class="partial-tooltip select is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    <select name=""></select>
+    <a class="button ok" href="#">Ok</a>
+    <a class="cancel" href="#">Cancel</a>
+
+  </span>
+</span>
+</span>
+
+<span class="partial-tooltip error is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    Unknown error
+
+  </span>
+</span>
+</span> <a href="#" class="action add-to-list disabled button">Add to list <i class='icon-share-alt'></i></a></span>
+
+
+                </section>
+
+            </div>
+        </section>
+    </td>
+</tr>
+<tr class="item-article-notices">
+    <td></td>
+    <td class="notices" colspan="2"><span class="note">Please note: This article is non-refundable. <a href="#">More
+        info</a></span>
+    <td>
+</tr>
+<tr class="item-article-service">
+    <!-- Only render this article-service block if there is a service attached to the above article -->
+    <td></td>
+    <td class="service" colspan="2">
+        <div class="wrapper">
+            <span class="name">Added service: Cutting<span
+                    class="properties">: 322 mm x 442 mm, cross fiber</span></span> <span class="price">2.00 EUR</span>
+        </div>
+    </td>
+</tr>
+<tr class="item-article" data-articlecode="ARTICLE CODE" data-entrynr="ENTRY NUMBER">
+    <td><input type="checkbox"/></td>
+    <td class="article">
+        <article class="partial-article-box-landscape media" data-partial="article-box-landscape">
+            <div class="img">
+                <img class="image" src="http://placekitten.com/80" alt="Product image">
+            </div>
+            <div class="content">
+                <a href="#" class="article-id">SKU: 88036955</a>
+                <span class="name">MultiArt Matt</span>
+                <span class="properties">weight: 115 g/m2, size 320x450</span>
+            </div>
+        </article>
+    </td>
+    <td class="value">
+        <ul class="actions-list hide-on-small">
+            <li>Add:</li>
+            <li><a href="#">Punching</a></li>
+            <li><a href="#">Renaming</a></li>
+            <li><a href="#">Repacking</a></li>
+            <li><a href="#">Cutting/slicing</a></li>
+            <li>
+
+
+
+
+
+
+
+
+<span class="partial-ajax-action partial-ajax-tooltip-input " data-url-post="URL HERE TO WEB API, INCLUDE NEEDED INFO"
+      data-post-data="" data-partial="ajax-action ajax-tooltip-input">
+
+<span class="partial-tooltip select is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    <input type="text" class="edit" name="" value=""/>
+    <a class="button ok" href="#">Ok</a>
+    <a class="cancel" href="#">Cancel</a>
+
+  </span>
+</span>
+</span>
+
+<span class="partial-tooltip error is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    Unknown error
+
+  </span>
+</span>
+</span> <a href="#" class="action "> Note </a>
+</span></li>
+        </ul>
+        <span class="quantity"><i class="icon-edit"></i> <a href="#">4 boxes (1000 sheets)</a></span> <span
+            class="price"><del>46.52</del> 43.47</span> EUR
+
+
+        <section class="partial-article-quantity-picker " data-partial="article-quantity-picker"
+                 data-get-url="URL-TO-WEB-API-HERE (it should include needed info, like SKU)" data-sku=""
+                 data-price-info="">
+
+
+            <div class="partial-alert-box alert alert-error error is-hidden" data-partial="alert-box">
+                <button type="button" class="close">×</button>
+                <div class="content">
+                    Connection problem. Please try again.
+                </div>
+            </div>
+
+
+            <div class="body clearfix is-hidden">
+                <form class="quantity-selection full-width validate loading">
+                    <label>Amount: </label>
+                    <!-- 		<div class="quantity-input">  -->
+                    <input type="number" min="1" name="quantity-value" class="quantity-value" required disabled>
+                    <select name="quantity-unit" class="quantity-unit" required disabled>
+                        <option value="" selected="selected"></option>
+                    </select>
+                    <!-- 		</div> -->
+                </form>
+
+                <section class="article-summary full-width is-hidden">
+                    <span class="sku-text">SKU: <span class="sku-id"></span></span>
+
+                    <div class="extra">
+                        <i class="icon-time icon-large"></i> <i class="icon-star-empty icon-large"></i> <span
+                            class="in-contract badge is-hidden">In contract</span>
+                    </div>
+                </section>
+
+                <section class="article-price half-width first-col">
+                    <!--<span class="amount">2 pallets</span>-->
+                    &nbsp;
+                    <!-- HACK: Completely empty elements don't get any width/height and screws up the layout. This section starts empty. -->
+                    <span class="price is-hidden"><span class="price-number"></span> EUR</span> <span
+                        class="discount is-hidden">Save <span class="discount-amount"></span> EUR by ordering <span
+                        class="discount-next"></span>.
+      </span>
+                </section>
+
+                <section class="article-shop buy half-width">
+
+
+
+
+
+
+
+
+
+<span class="partial-ajax-action partial-ajax-simple-action clearfix" data-url-post="POST-URL-HERE" data-post-data=""
+      data-partial="ajax-action ajax-simple-action">
+
+<span class="partial-tooltip error is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content"> Unknown error
+  </span>
+</span>
+</span> <a href="#" class="action add-to-cart disabled button"><i class='icon-shopping-cart icon-large'></i> Add to cart</a></span>
+
+
+
+
+
+
+
+
+
+<span class="partial-ajax-action partial-ajax-tooltip-select clearfix" data-url-get="ENTER-GET-SHOPPING-LIST-URL-HERE"
+      data-url-post="POST-URL-HERE" data-partial="ajax-action ajax-tooltip-select">
+
+<span class="partial-tooltip select is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    <select name=""></select>
+    <a class="button ok" href="#">Ok</a>
+    <a class="cancel" href="#">Cancel</a>
+
+  </span>
+</span>
+</span>
+
+<span class="partial-tooltip error is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    Unknown error
+
+  </span>
+</span>
+</span> <a href="#" class="action add-to-list disabled button">Add to list <i class='icon-share-alt'></i></a></span>
+
+
+                </section>
+
+            </div>
+        </section>
+    </td>
+</tr>
+<tr class="item-article-notices">
+    <td></td>
+    <td class="notices" colspan="2"><span class="note">Please note: This article is non-refundable. <a href="#">More
+        info</a></span>
+    <td>
+</tr>
+<tr class="item-article-service">
+    <!-- Only render this article-service block if there is a service attached to the above article -->
+    <td></td>
+    <td class="service" colspan="2">
+        <div class="wrapper">
+            <span class="name">Added service: Cutting<span
+                    class="properties">: 322 mm x 442 mm, cross fiber</span></span> <span class="price">2.00 EUR</span>
+        </div>
+    </td>
+</tr>
+<tr class="item-article" data-articlecode="ARTICLE CODE" data-entrynr="ENTRY NUMBER">
+    <td><input type="checkbox"/></td>
+    <td class="article">
+        <article class="partial-article-box-landscape media" data-partial="article-box-landscape">
+            <div class="img">
+                <img class="image" src="http://placekitten.com/80" alt="Product image">
+            </div>
+            <div class="content">
+                <a href="#" class="article-id">SKU: 88036955</a>
+                <span class="name">MultiArt Matt</span>
+                <span class="properties">weight: 115 g/m2, size 320x450</span>
+            </div>
+        </article>
+    </td>
+    <td class="value">
+        <ul class="actions-list hide-on-small">
+            <li>Add:</li>
+            <li><a href="#">Punching</a></li>
+            <li><a href="#">Renaming</a></li>
+            <li><a href="#">Repacking</a></li>
+            <li><a href="#">Cutting/slicing</a></li>
+            <li>
+
+
+
+
+
+
+
+
+<span class="partial-ajax-action partial-ajax-tooltip-input " data-url-post="URL HERE TO WEB API, INCLUDE NEEDED INFO"
+      data-post-data="" data-partial="ajax-action ajax-tooltip-input">
+
+<span class="partial-tooltip select is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    <input type="text" class="edit" name="" value=""/>
+    <a class="button ok" href="#">Ok</a>
+    <a class="cancel" href="#">Cancel</a>
+
+  </span>
+</span>
+</span>
+
+<span class="partial-tooltip error is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    Unknown error
+
+  </span>
+</span>
+</span> <a href="#" class="action "> Note </a>
+</span></li>
+        </ul>
+        <span class="quantity"><i class="icon-edit"></i> <a href="#">4 boxes (1000 sheets)</a></span> <span
+            class="price"><del>46.52</del> 43.47</span> EUR
+
+
+        <section class="partial-article-quantity-picker " data-partial="article-quantity-picker"
+                 data-get-url="URL-TO-WEB-API-HERE (it should include needed info, like SKU)" data-sku=""
+                 data-price-info="">
+
+
+            <div class="partial-alert-box alert alert-error error is-hidden" data-partial="alert-box">
+                <button type="button" class="close">×</button>
+                <div class="content">
+                    Connection problem. Please try again.
+                </div>
+            </div>
+
+
+            <div class="body clearfix is-hidden">
+                <form class="quantity-selection full-width validate loading">
+                    <label>Amount: </label>
+                    <!-- 		<div class="quantity-input">  -->
+                    <input type="number" min="1" name="quantity-value" class="quantity-value" required disabled>
+                    <select name="quantity-unit" class="quantity-unit" required disabled>
+                        <option value="" selected="selected"></option>
+                    </select>
+                    <!-- 		</div> -->
+                </form>
+
+                <section class="article-summary full-width is-hidden">
+                    <span class="sku-text">SKU: <span class="sku-id"></span></span>
+
+                    <div class="extra">
+                        <i class="icon-time icon-large"></i> <i class="icon-star-empty icon-large"></i> <span
+                            class="in-contract badge is-hidden">In contract</span>
+                    </div>
+                </section>
+
+                <section class="article-price half-width first-col">
+                    <!--<span class="amount">2 pallets</span>-->
+                    &nbsp;
+                    <!-- HACK: Completely empty elements don't get any width/height and screws up the layout. This section starts empty. -->
+                    <span class="price is-hidden"><span class="price-number"></span> EUR</span> <span
+                        class="discount is-hidden">Save <span class="discount-amount"></span> EUR by ordering <span
+                        class="discount-next"></span>.
+      </span>
+                </section>
+
+                <section class="article-shop buy half-width">
+
+
+
+
+
+
+
+
+
+<span class="partial-ajax-action partial-ajax-simple-action clearfix" data-url-post="POST-URL-HERE" data-post-data=""
+      data-partial="ajax-action ajax-simple-action">
+
+<span class="partial-tooltip error is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content"> Unknown error
+  </span>
+</span>
+</span> <a href="#" class="action add-to-cart disabled button"><i class='icon-shopping-cart icon-large'></i> Add to cart</a></span>
+
+
+
+
+
+
+
+
+
+<span class="partial-ajax-action partial-ajax-tooltip-select clearfix" data-url-get="ENTER-GET-SHOPPING-LIST-URL-HERE"
+      data-url-post="POST-URL-HERE" data-partial="ajax-action ajax-tooltip-select">
+
+<span class="partial-tooltip select is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    <select name=""></select>
+    <a class="button ok" href="#">Ok</a>
+    <a class="cancel" href="#">Cancel</a>
+
+  </span>
+</span>
+</span>
+
+<span class="partial-tooltip error is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    Unknown error
+
+  </span>
+</span>
+</span> <a href="#" class="action add-to-list disabled button">Add to list <i class='icon-share-alt'></i></a></span>
+
+
+                </section>
+
+            </div>
+        </section>
+    </td>
+</tr>
+<tr class="item-article-notices">
+    <td></td>
+    <td class="notices" colspan="2"><span class="note">Please note: This article is non-refundable. <a href="#">More
+        info</a></span>
+    <td>
+</tr>
+<tr class="item-article-service">
+    <!-- Only render this article-service block if there is a service attached to the above article -->
+    <td></td>
+    <td class="service" colspan="2">
+        <div class="wrapper">
+            <span class="name">Added service: Cutting<span
+                    class="properties">: 322 mm x 442 mm, cross fiber</span></span> <span class="price">2.00 EUR</span>
+        </div>
+    </td>
+</tr>
+<tr class="item-service">
+    <td><input type="checkbox"/></td>
+    <td class="service">
+        <article class="partial-service-box-landscape media" data-partial="service-box-landscape">
+            <div class="img">
+                <img class="image" src="http://placekitten.com/80" alt="Service image"> <span class="article-id">632423523</span>
+                <span class="label">Service</span>
+            </div>
+            <div class="content">
+                <span class="article-id">632423523</span> <a href="#">Repacking</a> <span class="properties">Repacking of the entire order</span>
+            </div>
+        </article>
+    </td>
+    <td class="value"><span class="type">Service</span> <span class="price">34.00 EUR</span></td>
+</tr>
+<tr class="item-service">
+    <td><input type="checkbox"/></td>
+    <td class="service">
+        <article class="partial-service-box-landscape media" data-partial="service-box-landscape">
+            <div class="img">
+                <img class="image" src="http://placekitten.com/80" alt="Service image"> <span class="article-id">632423523</span>
+                <span class="label">Service</span>
+            </div>
+            <div class="content">
+                <span class="article-id">632423523</span> <a href="#">Repacking</a> <span class="properties">Repacking of the entire order</span>
+            </div>
+        </article>
+    </td>
+    <td class="value"><span class="type">Service</span> <span class="price">34.00 EUR</span></td>
+</tr>
+</tbody>
+</table>
+
+</section>
+
+
+</section>
+</div>
+
+
+<form class="partial-form order-note" data-partial="form">
+    <section class="partial-form-field partial-form-text-area " data-partial="form-field form-text-area">
+        <label for="">Your Order Reference</label>
+        <textarea id=""
+                  name="ordernote"
+                ></textarea>
+        <span class="extra-info">For your own reference</span>
+    </section>
+
+</form>
+</section>
+
+<form class="one-third-width order-summary">
+    <h2>Order summary</h2>
+
+    <div class="is-summary-placeholder">
+
+
+        <section class="partial-checkout-order-box " data-partial="checkout-order-box">
+
+
+            <section class="partial-order-summary-box " data-partial="order-summary-box">
+                <h3>Order details</h3>
+
+                <table class="placeholder full-width">
+                    <tbody>
+                    <tr class="item">
+                        <td class="property">Articles (3)</td>
+                        <td class="value">473.86 EUR</td>
+                    </tr>
+                    <tr class="item">
+                        <td class="property">Services (1)</td>
+                        <td class="value">34.00 EUR</td>
+                    </tr>
+                    <tr class="item free">
+                        <td class="property">Internet rebate</td>
+                        <td class="value">- 73.02 EUR</td>
+                    </tr>
+                    <tr class="item free">
+                        <td class="property">Shipping</td>
+                        <td class="value">Free shipping</td>
+                    </tr>
+                    <tr class="summary">
+                        <td class="property">Total order value</td>
+                        <td class="value">434.84 EUR</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <span class="weight">Total weight: 4'271 Kg</span> <span class="payment">Payment: invoice</span>
+            </section>
+
+            <section>
+
+
+                <section class="partial-budget-bar" data-partial="budget-bar">
+                    <span>(Budget bar component not implemented (388 of 850))</span>
+
+                </section>
+                <p>462.83 EUR left in your budget after this order.</p>
+            </section>
+        </section>
+    </div>
+
+    <div class="order">
+        <label><input type="checkbox" name="toc" required/> I agree to the <a href="#">Terms & Conditions</a>.</label>
+        <a href="#" class="is-placing-order button">Place order</a>
+    </div>
+</form>
+</article>
+
+<aside class="one-third-width">
+<section class="add-extra-services">
+<h2>Add extra services</h2>
+<ul>
+
+<li>
+
+    <article class="partial-service-shop-box-landscape" data-partial="service-shop-box-landscape">
+        <article class="partial-service-box-landscape media" data-partial="service-box-landscape">
+            <div class="img">
+                <img class="image" src="http://placekitten.com/80" alt="Service image"> <span class="article-id">632423523</span>
+                <span class="label">Service</span>
+            </div>
+            <div class="content">
+                <span class="article-id">632423523</span> <a href="#">Repacking</a> <span class="properties">Repacking of the entire order</span>
+            </div>
+        </article>
+
+        <div class="shop-button">
+            <a class="button" href="#">Shop</a>
+        </div>
+        <div class="quantity-picker-wrapper">
+
+
+            <section class="partial-article-quantity-picker " data-partial="article-quantity-picker"
+                     data-get-url="URL TO GET QUANTITY INFO HERE, preferably with sku info" data-sku=""
+                     data-price-info="">
+
+
+                <div class="partial-alert-box alert alert-error error is-hidden" data-partial="alert-box">
+                    <button type="button" class="close">×</button>
+                    <div class="content">
+                        Connection problem. Please try again.
+                    </div>
+                </div>
+
+
+                <div class="body clearfix is-hidden">
+                    <form class="quantity-selection full-width validate loading">
+                        <label>Amount: </label>
+                        <!-- 		<div class="quantity-input">  -->
+                        <input type="number" min="1" name="quantity-value" class="quantity-value" required disabled>
+                        <select name="quantity-unit" class="quantity-unit" required disabled>
+                            <option value="" selected="selected"></option>
+                        </select>
+                        <!-- 		</div> -->
+                    </form>
+
+                    <section class="article-summary full-width is-hidden">
+                        <span class="sku-text">SKU: <span class="sku-id"></span></span>
+
+                        <div class="extra">
+                            <i class="icon-time icon-large"></i> <i class="icon-star-empty icon-large"></i> <span
+                                class="in-contract badge is-hidden">In contract</span>
+                        </div>
+                    </section>
+
+                    <section class="article-price half-width first-col">
+                        <!--<span class="amount">2 pallets</span>-->
+                        &nbsp;
+                        <!-- HACK: Completely empty elements don't get any width/height and screws up the layout. This section starts empty. -->
+                        <span class="price is-hidden"><span class="price-number"></span> EUR</span> <span
+                            class="discount is-hidden">Save <span class="discount-amount"></span> EUR by ordering <span
+                            class="discount-next"></span>.
+      </span>
+                    </section>
+
+                    <section class="article-shop buy half-width">
+
+
+
+
+
+
+
+
+
+<span class="partial-ajax-action partial-ajax-simple-action clearfix" data-url-post="POST-URL-HERE" data-post-data=""
+      data-partial="ajax-action ajax-simple-action">
+
+<span class="partial-tooltip error is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content"> Unknown error
+  </span>
+</span>
+</span> <a href="#" class="action add-to-cart disabled button"><i class='icon-shopping-cart icon-large'></i> Add to cart</a></span>
+
+
+
+
+
+
+
+
+
+<span class="partial-ajax-action partial-ajax-tooltip-select clearfix" data-url-get="ENTER-GET-SHOPPING-LIST-URL-HERE"
+      data-url-post="POST-URL-HERE" data-partial="ajax-action ajax-tooltip-select">
+
+<span class="partial-tooltip select is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    <select name=""></select>
+    <a class="button ok" href="#">Ok</a>
+    <a class="cancel" href="#">Cancel</a>
+
+  </span>
+</span>
+</span>
+
+<span class="partial-tooltip error is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    Unknown error
+
+  </span>
+</span>
+</span> <a href="#" class="action add-to-list disabled button">Add to list <i class='icon-share-alt'></i></a></span>
+
+
+                    </section>
+
+                </div>
+            </section>
+        </div>
+    </article>
+</li>
+
+<li>
+
+    <article class="partial-service-shop-box-landscape" data-partial="service-shop-box-landscape">
+        <article class="partial-service-box-landscape media" data-partial="service-box-landscape">
+            <div class="img">
+                <img class="image" src="http://placekitten.com/80" alt="Service image"> <span class="article-id">632423523</span>
+                <span class="label">Service</span>
+            </div>
+            <div class="content">
+                <span class="article-id">632423523</span> <a href="#">Repacking</a> <span class="properties">Repacking of the entire order</span>
+            </div>
+        </article>
+
+        <div class="shop-button">
+            <a class="button" href="#">Shop</a>
+        </div>
+        <div class="quantity-picker-wrapper">
+
+
+            <section class="partial-article-quantity-picker " data-partial="article-quantity-picker"
+                     data-get-url="URL TO GET QUANTITY INFO HERE, preferably with sku info" data-sku=""
+                     data-price-info="">
+
+
+                <div class="partial-alert-box alert alert-error error is-hidden" data-partial="alert-box">
+                    <button type="button" class="close">×</button>
+                    <div class="content">
+                        Connection problem. Please try again.
+                    </div>
+                </div>
+
+
+                <div class="body clearfix is-hidden">
+                    <form class="quantity-selection full-width validate loading">
+                        <label>Amount: </label>
+                        <!-- 		<div class="quantity-input">  -->
+                        <input type="number" min="1" name="quantity-value" class="quantity-value" required disabled>
+                        <select name="quantity-unit" class="quantity-unit" required disabled>
+                            <option value="" selected="selected"></option>
+                        </select>
+                        <!-- 		</div> -->
+                    </form>
+
+                    <section class="article-summary full-width is-hidden">
+                        <span class="sku-text">SKU: <span class="sku-id"></span></span>
+
+                        <div class="extra">
+                            <i class="icon-time icon-large"></i> <i class="icon-star-empty icon-large"></i> <span
+                                class="in-contract badge is-hidden">In contract</span>
+                        </div>
+                    </section>
+
+                    <section class="article-price half-width first-col">
+                        <!--<span class="amount">2 pallets</span>-->
+                        &nbsp;
+                        <!-- HACK: Completely empty elements don't get any width/height and screws up the layout. This section starts empty. -->
+                        <span class="price is-hidden"><span class="price-number"></span> EUR</span> <span
+                            class="discount is-hidden">Save <span class="discount-amount"></span> EUR by ordering <span
+                            class="discount-next"></span>.
+      </span>
+                    </section>
+
+                    <section class="article-shop buy half-width">
+
+
+
+
+
+
+
+
+
+<span class="partial-ajax-action partial-ajax-simple-action clearfix" data-url-post="POST-URL-HERE" data-post-data=""
+      data-partial="ajax-action ajax-simple-action">
+
+<span class="partial-tooltip error is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content"> Unknown error
+  </span>
+</span>
+</span> <a href="#" class="action add-to-cart disabled button"><i class='icon-shopping-cart icon-large'></i> Add to cart</a></span>
+
+
+
+
+
+
+
+
+
+<span class="partial-ajax-action partial-ajax-tooltip-select clearfix" data-url-get="ENTER-GET-SHOPPING-LIST-URL-HERE"
+      data-url-post="POST-URL-HERE" data-partial="ajax-action ajax-tooltip-select">
+
+<span class="partial-tooltip select is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    <select name=""></select>
+    <a class="button ok" href="#">Ok</a>
+    <a class="cancel" href="#">Cancel</a>
+
+  </span>
+</span>
+</span>
+
+<span class="partial-tooltip error is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    Unknown error
+
+  </span>
+</span>
+</span> <a href="#" class="action add-to-list disabled button">Add to list <i class='icon-share-alt'></i></a></span>
+
+
+                    </section>
+
+                </div>
+            </section>
+        </div>
+    </article>
+</li>
+
+<li>
+
+    <article class="partial-service-shop-box-landscape" data-partial="service-shop-box-landscape">
+        <article class="partial-service-box-landscape media" data-partial="service-box-landscape">
+            <div class="img">
+                <img class="image" src="http://placekitten.com/80" alt="Service image"> <span class="article-id">632423523</span>
+                <span class="label">Service</span>
+            </div>
+            <div class="content">
+                <span class="article-id">632423523</span> <a href="#">Repacking</a> <span class="properties">Repacking of the entire order</span>
+            </div>
+        </article>
+
+        <div class="shop-button">
+            <a class="button" href="#">Shop</a>
+        </div>
+        <div class="quantity-picker-wrapper">
+
+
+            <section class="partial-article-quantity-picker " data-partial="article-quantity-picker"
+                     data-get-url="URL TO GET QUANTITY INFO HERE, preferably with sku info" data-sku=""
+                     data-price-info="">
+
+
+                <div class="partial-alert-box alert alert-error error is-hidden" data-partial="alert-box">
+                    <button type="button" class="close">×</button>
+                    <div class="content">
+                        Connection problem. Please try again.
+                    </div>
+                </div>
+
+
+                <div class="body clearfix is-hidden">
+                    <form class="quantity-selection full-width validate loading">
+                        <label>Amount: </label>
+                        <!-- 		<div class="quantity-input">  -->
+                        <input type="number" min="1" name="quantity-value" class="quantity-value" required disabled>
+                        <select name="quantity-unit" class="quantity-unit" required disabled>
+                            <option value="" selected="selected"></option>
+                        </select>
+                        <!-- 		</div> -->
+                    </form>
+
+                    <section class="article-summary full-width is-hidden">
+                        <span class="sku-text">SKU: <span class="sku-id"></span></span>
+
+                        <div class="extra">
+                            <i class="icon-time icon-large"></i> <i class="icon-star-empty icon-large"></i> <span
+                                class="in-contract badge is-hidden">In contract</span>
+                        </div>
+                    </section>
+
+                    <section class="article-price half-width first-col">
+                        <!--<span class="amount">2 pallets</span>-->
+                        &nbsp;
+                        <!-- HACK: Completely empty elements don't get any width/height and screws up the layout. This section starts empty. -->
+                        <span class="price is-hidden"><span class="price-number"></span> EUR</span> <span
+                            class="discount is-hidden">Save <span class="discount-amount"></span> EUR by ordering <span
+                            class="discount-next"></span>.
+      </span>
+                    </section>
+
+                    <section class="article-shop buy half-width">
+
+
+
+
+
+
+
+
+
+<span class="partial-ajax-action partial-ajax-simple-action clearfix" data-url-post="POST-URL-HERE" data-post-data=""
+      data-partial="ajax-action ajax-simple-action">
+
+<span class="partial-tooltip error is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content"> Unknown error
+  </span>
+</span>
+</span> <a href="#" class="action add-to-cart disabled button"><i class='icon-shopping-cart icon-large'></i> Add to cart</a></span>
+
+
+
+
+
+
+
+
+
+<span class="partial-ajax-action partial-ajax-tooltip-select clearfix" data-url-get="ENTER-GET-SHOPPING-LIST-URL-HERE"
+      data-url-post="POST-URL-HERE" data-partial="ajax-action ajax-tooltip-select">
+
+<span class="partial-tooltip select is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    <select name=""></select>
+    <a class="button ok" href="#">Ok</a>
+    <a class="cancel" href="#">Cancel</a>
+
+  </span>
+</span>
+</span>
+
+<span class="partial-tooltip error is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    Unknown error
+
+  </span>
+</span>
+</span> <a href="#" class="action add-to-list disabled button">Add to list <i class='icon-share-alt'></i></a></span>
+
+
+                    </section>
+
+                </div>
+            </section>
+        </div>
+    </article>
+</li>
+
+</ul>
+</section>
+
+<section class="add-suggested-products">
+<h2>Add suggested products</h2>
+<ul>
+
+<li>
+
+    <article class="partial-article-shop-box-landscape" data-url="." data-sku="88036955"
+             data-partial="article-shop-box-landscape">
+        <article class="partial-article-box-landscape media" data-partial="article-box-landscape">
+            <div class="img">
+                <img class="image" src="http://placekitten.com/80" alt="Product image">
+            </div>
+            <div class="content">
+                <a href="#" class="article-id">SKU: 88036955</a>
+                <span class="name">MultiArt Matt</span>
+                <span class="properties">weight: 115 g/m2, size 320x450</span>
+            </div>
+        </article>
+        <div class="shop-button">
+            <a class="button" href="#">Shop</a>
+        </div>
+        <div class="quantity-picker-wrapper">
+
+
+            <section class="partial-article-quantity-picker " data-partial="article-quantity-picker"
+                     data-get-url="URL-TO-WEB-API-HERE (it should include needed info, like SKU)" data-sku=""
+                     data-price-info="">
+
+
+                <div class="partial-alert-box alert alert-error error is-hidden" data-partial="alert-box">
+                    <button type="button" class="close">×</button>
+                    <div class="content">
+                        Connection problem. Please try again.
+                    </div>
+                </div>
+
+
+                <div class="body clearfix is-hidden">
+                    <form class="quantity-selection full-width validate loading">
+                        <label>Amount: </label>
+                        <!-- 		<div class="quantity-input">  -->
+                        <input type="number" min="1" name="quantity-value" class="quantity-value" required disabled>
+                        <select name="quantity-unit" class="quantity-unit" required disabled>
+                            <option value="" selected="selected"></option>
+                        </select>
+                        <!-- 		</div> -->
+                    </form>
+
+                    <section class="article-summary full-width is-hidden">
+                        <span class="sku-text">SKU: <span class="sku-id"></span></span>
+
+                        <div class="extra">
+                            <i class="icon-time icon-large"></i> <i class="icon-star-empty icon-large"></i> <span
+                                class="in-contract badge is-hidden">In contract</span>
+                        </div>
+                    </section>
+
+                    <section class="article-price half-width first-col">
+                        <!--<span class="amount">2 pallets</span>-->
+                        &nbsp;
+                        <!-- HACK: Completely empty elements don't get any width/height and screws up the layout. This section starts empty. -->
+                        <span class="price is-hidden"><span class="price-number"></span> EUR</span> <span
+                            class="discount is-hidden">Save <span class="discount-amount"></span> EUR by ordering <span
+                            class="discount-next"></span>.
+      </span>
+                    </section>
+
+                    <section class="article-shop buy half-width">
+
+
+
+
+
+
+
+
+
+<span class="partial-ajax-action partial-ajax-simple-action clearfix" data-url-post="POST-URL-HERE" data-post-data=""
+      data-partial="ajax-action ajax-simple-action">
+
+<span class="partial-tooltip error is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content"> Unknown error
+  </span>
+</span>
+</span> <a href="#" class="action add-to-cart disabled button"><i class='icon-shopping-cart icon-large'></i> Add to cart</a></span>
+
+
+
+
+
+
+
+
+
+<span class="partial-ajax-action partial-ajax-tooltip-select clearfix" data-url-get="ENTER-GET-SHOPPING-LIST-URL-HERE"
+      data-url-post="POST-URL-HERE" data-partial="ajax-action ajax-tooltip-select">
+
+<span class="partial-tooltip select is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    <select name=""></select>
+    <a class="button ok" href="#">Ok</a>
+    <a class="cancel" href="#">Cancel</a>
+
+  </span>
+</span>
+</span>
+
+<span class="partial-tooltip error is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    Unknown error
+
+  </span>
+</span>
+</span> <a href="#" class="action add-to-list disabled button">Add to list <i class='icon-share-alt'></i></a></span>
+
+
+                    </section>
+
+                </div>
+            </section>
+        </div>
+    </article>
+</li>
+
+<li>
+
+    <article class="partial-article-shop-box-landscape" data-url="." data-sku="88036955"
+             data-partial="article-shop-box-landscape">
+        <article class="partial-article-box-landscape media" data-partial="article-box-landscape">
+            <div class="img">
+                <img class="image" src="http://placekitten.com/80" alt="Product image">
+            </div>
+            <div class="content">
+                <a href="#" class="article-id">SKU: 88036955</a>
+                <span class="name">MultiArt Matt</span>
+                <span class="properties">weight: 115 g/m2, size 320x450</span>
+            </div>
+        </article>
+        <div class="shop-button">
+            <a class="button" href="#">Shop</a>
+        </div>
+        <div class="quantity-picker-wrapper">
+
+
+            <section class="partial-article-quantity-picker " data-partial="article-quantity-picker"
+                     data-get-url="URL-TO-WEB-API-HERE (it should include needed info, like SKU)" data-sku=""
+                     data-price-info="">
+
+
+                <div class="partial-alert-box alert alert-error error is-hidden" data-partial="alert-box">
+                    <button type="button" class="close">×</button>
+                    <div class="content">
+                        Connection problem. Please try again.
+                    </div>
+                </div>
+
+
+                <div class="body clearfix is-hidden">
+                    <form class="quantity-selection full-width validate loading">
+                        <label>Amount: </label>
+                        <!-- 		<div class="quantity-input">  -->
+                        <input type="number" min="1" name="quantity-value" class="quantity-value" required disabled>
+                        <select name="quantity-unit" class="quantity-unit" required disabled>
+                            <option value="" selected="selected"></option>
+                        </select>
+                        <!-- 		</div> -->
+                    </form>
+
+                    <section class="article-summary full-width is-hidden">
+                        <span class="sku-text">SKU: <span class="sku-id"></span></span>
+
+                        <div class="extra">
+                            <i class="icon-time icon-large"></i> <i class="icon-star-empty icon-large"></i> <span
+                                class="in-contract badge is-hidden">In contract</span>
+                        </div>
+                    </section>
+
+                    <section class="article-price half-width first-col">
+                        <!--<span class="amount">2 pallets</span>-->
+                        &nbsp;
+                        <!-- HACK: Completely empty elements don't get any width/height and screws up the layout. This section starts empty. -->
+                        <span class="price is-hidden"><span class="price-number"></span> EUR</span> <span
+                            class="discount is-hidden">Save <span class="discount-amount"></span> EUR by ordering <span
+                            class="discount-next"></span>.
+      </span>
+                    </section>
+
+                    <section class="article-shop buy half-width">
+
+
+
+
+
+
+
+
+
+<span class="partial-ajax-action partial-ajax-simple-action clearfix" data-url-post="POST-URL-HERE" data-post-data=""
+      data-partial="ajax-action ajax-simple-action">
+
+<span class="partial-tooltip error is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content"> Unknown error
+  </span>
+</span>
+</span> <a href="#" class="action add-to-cart disabled button"><i class='icon-shopping-cart icon-large'></i> Add to cart</a></span>
+
+
+
+
+
+
+
+
+
+<span class="partial-ajax-action partial-ajax-tooltip-select clearfix" data-url-get="ENTER-GET-SHOPPING-LIST-URL-HERE"
+      data-url-post="POST-URL-HERE" data-partial="ajax-action ajax-tooltip-select">
+
+<span class="partial-tooltip select is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    <select name=""></select>
+    <a class="button ok" href="#">Ok</a>
+    <a class="cancel" href="#">Cancel</a>
+
+  </span>
+</span>
+</span>
+
+<span class="partial-tooltip error is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    Unknown error
+
+  </span>
+</span>
+</span> <a href="#" class="action add-to-list disabled button">Add to list <i class='icon-share-alt'></i></a></span>
+
+
+                    </section>
+
+                </div>
+            </section>
+        </div>
+    </article>
+</li>
+
+<li>
+
+    <article class="partial-article-shop-box-landscape" data-url="." data-sku="88036955"
+             data-partial="article-shop-box-landscape">
+        <article class="partial-article-box-landscape media" data-partial="article-box-landscape">
+            <div class="img">
+                <img class="image" src="http://placekitten.com/80" alt="Product image">
+            </div>
+            <div class="content">
+                <a href="#" class="article-id">SKU: 88036955</a>
+                <span class="name">MultiArt Matt</span>
+                <span class="properties">weight: 115 g/m2, size 320x450</span>
+            </div>
+        </article>
+        <div class="shop-button">
+            <a class="button" href="#">Shop</a>
+        </div>
+        <div class="quantity-picker-wrapper">
+
+
+            <section class="partial-article-quantity-picker " data-partial="article-quantity-picker"
+                     data-get-url="URL-TO-WEB-API-HERE (it should include needed info, like SKU)" data-sku=""
+                     data-price-info="">
+
+
+                <div class="partial-alert-box alert alert-error error is-hidden" data-partial="alert-box">
+                    <button type="button" class="close">×</button>
+                    <div class="content">
+                        Connection problem. Please try again.
+                    </div>
+                </div>
+
+
+                <div class="body clearfix is-hidden">
+                    <form class="quantity-selection full-width validate loading">
+                        <label>Amount: </label>
+                        <!-- 		<div class="quantity-input">  -->
+                        <input type="number" min="1" name="quantity-value" class="quantity-value" required disabled>
+                        <select name="quantity-unit" class="quantity-unit" required disabled>
+                            <option value="" selected="selected"></option>
+                        </select>
+                        <!-- 		</div> -->
+                    </form>
+
+                    <section class="article-summary full-width is-hidden">
+                        <span class="sku-text">SKU: <span class="sku-id"></span></span>
+
+                        <div class="extra">
+                            <i class="icon-time icon-large"></i> <i class="icon-star-empty icon-large"></i> <span
+                                class="in-contract badge is-hidden">In contract</span>
+                        </div>
+                    </section>
+
+                    <section class="article-price half-width first-col">
+                        <!--<span class="amount">2 pallets</span>-->
+                        &nbsp;
+                        <!-- HACK: Completely empty elements don't get any width/height and screws up the layout. This section starts empty. -->
+                        <span class="price is-hidden"><span class="price-number"></span> EUR</span> <span
+                            class="discount is-hidden">Save <span class="discount-amount"></span> EUR by ordering <span
+                            class="discount-next"></span>.
+      </span>
+                    </section>
+
+                    <section class="article-shop buy half-width">
+
+
+
+
+
+
+
+
+
+<span class="partial-ajax-action partial-ajax-simple-action clearfix" data-url-post="POST-URL-HERE" data-post-data=""
+      data-partial="ajax-action ajax-simple-action">
+
+<span class="partial-tooltip error is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content"> Unknown error
+  </span>
+</span>
+</span> <a href="#" class="action add-to-cart disabled button"><i class='icon-shopping-cart icon-large'></i> Add to cart</a></span>
+
+
+
+
+
+
+
+
+
+<span class="partial-ajax-action partial-ajax-tooltip-select clearfix" data-url-get="ENTER-GET-SHOPPING-LIST-URL-HERE"
+      data-url-post="POST-URL-HERE" data-partial="ajax-action ajax-tooltip-select">
+
+<span class="partial-tooltip select is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    <select name=""></select>
+    <a class="button ok" href="#">Ok</a>
+    <a class="cancel" href="#">Cancel</a>
+
+  </span>
+</span>
+</span>
+
+<span class="partial-tooltip error is-hidden" data-partial="tooltip"> <span class="tooltip-wrapper"> <span
+        class="arrow"></span> <span class="content">
+    Unknown error
+
+  </span>
+</span>
+</span> <a href="#" class="action add-to-list disabled button">Add to list <i class='icon-share-alt'></i></a></span>
+
+
+                    </section>
+
+                </div>
+            </section>
+        </div>
+    </article>
+</li>
+
+</ul>
+</section>
+
+<section class="add-coupon">
+    <h2>Add a coupon</h2>
+
+    <form class="partial-form is-validated" data-partial="form">
+        <input type="text" placeholder="Have a coupon? Enter it here." name="couponcode"/> <a href="#" class="button">Validate</a>
+    </form>
+</section>
+</aside>
+
+</div>
+
+</div>
+<!-- end of #container -->
+
+<footer id="footer">
+    <div class="content">
+        <!-- footer row 1 -->
+        <div class="push-areas">
+
+            <div class="push-area pages">
+                <div class="one-true-layout">
+                    <h2>Pages</h2>
+                    <ul>
+                        <li><a href="#">Start page</a></li>
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Terms &amp; Conditions</a></li>
+                        <li><a href="#">FAQ &amp; Help</a></li>
+                        <li><a href="#">Sign up</a></li>
+                        <li><a href="#">Downloads</a></li>
+                        <li><a href="#">Sitemap</a></li>
+                        <li><a href="#">Security policy</a></li>
+                        <li><a href="#">Privacy policy</a></li>
+                        <li><a href="#">Contact us</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="push-area viewed">
+                <div class="one-true-layout">
+                    <h2>You looked at</h2>
+                    <ul class="viewed-items">
+                        <li>
+                            <article class="partial-product-box-landscape media" data-partial="product-box-landscape">
+                                <div class="img">
+                                    <img class="image" src="http://placekitten.com/80" alt="Product image">
+                                </div>
+                                <div class="content">
+                                    <a class="name" href="#">MultiArt Matt</a>
+
+                                    <p class="description">Woodfree, coated paper with matte finish. High bulk and
+                                        opacity.</p>
+                                </div>
+                            </article>
+                        </li>
+                        <li>
+                            <article class="partial-product-box-landscape media" data-partial="product-box-landscape">
+                                <div class="img">
+                                    <img class="image" src="http://placekitten.com/80" alt="Product image">
+                                </div>
+                                <div class="content">
+                                    <a class="name" href="#">MultiArt Matt</a>
+
+                                    <p class="description">Woodfree, coated paper with matte finish. High bulk and
+                                        opacity.</p>
+                                </div>
+                            </article>
+                        </li>
+                        <li>
+                            <article class="partial-product-box-landscape media" data-partial="product-box-landscape">
+                                <div class="img">
+                                    <img class="image" src="http://placekitten.com/80" alt="Product image">
+                                </div>
+                                <div class="content">
+                                    <a class="name" href="#">MultiArt Matt</a>
+
+                                    <p class="description">Woodfree, coated paper with matte finish. High bulk and
+                                        opacity.</p>
+                                </div>
+                            </article>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="push-area newsletter">
+                <div class="one-true-layout">
+                    <h2>Newsletter</h2>
+                    <ul>
+                        <li>Only once a week</li>
+                        <li>Great offers and benefits</li>
+                        <li>Another benefit description</li>
+                    </ul>
+                    <br/> <span>Your e-mail adress</span><br/> <input type="text"/> <input type="button"
+                                                                                           value="Sign up for newsletter"/>
+
+                    <p>We will never share your information with 3:rd party actors.</p>
+                </div>
+            </div>
+
+            <div class="push-area news">
+                <div class="one-true-layout">
+                    <h2>News</h2>
+                    <ul class="news-items">
+                        <li>
+                            <p>Yesterday</p> <a href="#">We updated our prices in cleaning</a>
+
+                            <p>Some are higher, some are lower...</p>
+                        </li>
+                        <li>
+                            <p>23:rd of May</p> <a href="#">New product line: Muscle Mops</a>
+
+                            <p>Tough against the toughest of...</p>
+                        </li>
+                        <li>
+                            <p>16:th of May</p> <a href="#">Papyrus Supplies at trade fair</a>
+
+                            <p>When we arrived, we could'nt believe...</p>
+                        </li>
+                    </ul>
+                    <div class="archive">
+                        <a href="#">News archive</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- footer row 2 -->
+        <div class="about-us">
+            <p>We are Papyrus, the service company.</p>
+
+            <p>Committed to staying at the forefront, so you and your business can, too.</p>
+        </div>
+
+        <div class="shopping-info">
+            <span>Shop with confidence.</span> <img src="../../_ui/common/images/trust_verisign.png"
+                                                    alt="VeriSign Trusted logo"/> <img
+                src="../../_ui/common/images/trust_ssl.png" alt="SSL Renewals logo"/> <img
+                src="../../_ui/common/images/trust_safe.png" alt="Safe Site logo"/> <img
+                src="../../_ui/common/images/trust_trygg.png" alt="Trygg E-handel logo"/>
+        </div>
+
+        <!-- footer row 3 -->
+        <div class="papyrus-group">
+            <!-- <p class="center">[Papyrus logo]</p> I dont think we need the logo in the footer.. - Josef -->
+            <!-- <p class="center">www.papyrusgroup.com</p> Shouldnt have design descriptive class (.center) and should be link, made one below - Josef -->
+            <a href="http://www.papyrusgroup.com" target="_blank">www.papyrusgroup.com</a>
+        </div>
+
+        <!-- footer row 3 -->
+        <!-- <div class="color-bar"></div> Remove this, bar is not base, created bar w css - Josef -->
+
+    </div>
+</footer>
+
+</div>
+<script src="../../libs/jquery-1.9.0.min.js"></script>
+<script src="../../libs/QUnit/qunit-1.10.0.js"></script>
+<script src="html.tests.js"></script>
+<script src="performance.tests.js"></script>
+</body>
+</html>
