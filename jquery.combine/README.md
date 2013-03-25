@@ -1,6 +1,6 @@
 # jquery.combine
 
-Combine objects using basic set theory - such as union, intersection, difference, symmetric difference, etc.
+Combine regular JS objects using basic set theory: union, intersection, difference, and symmetric difference.
 
 ## Getting Started
 Download the [production version][min] or the [development version][max].
@@ -11,6 +11,7 @@ Download the [production version][min] or the [development version][max].
 In your web page:
 
 ```html
+<script src="libs/jquery/jquery.js"></script>
 <script src="dist/jquery.combine.min.js"></script>
 ```
 
@@ -18,7 +19,41 @@ In your web page:
 _(Coming soon)_
 
 ## Examples
-_(Coming soon)_
+
+### Union
+Union is pretty much the same as $.extend() in regular jQuery.
+```javascript
+var a = { one: 1, two: 2 };
+var b = { one: 1, three: 3 };
+
+var result = $.union(a, b);  // { one: 1, two: 2, three: 3 }
+```
+
+### Intersection
+```javascript
+var a = { one: 1, two: 2 };
+var b = { one: 1, three: 3 };
+
+var result = $.intersection(a, b); // { one: 1 }
+```
+
+### Difference
+```javascript
+var u = { one: 1, two: 2 };
+var a = { one: 1, three: 3 };
+
+var result = $.difference(u, a); // { two: 2 }
+```
+
+### Symmetric difference
+```javascript
+var a = { one: 1, two: 2 };
+var b = { one: 1, three: 3 };
+
+var result = $.symmetric(a, b); // { two: 2, three: 3 }
+```
+
+
 
 ## Release History
-_(Nothing yet)_
+v0.0.1 - 25 March 2013 - Completed library code and basic documentation.

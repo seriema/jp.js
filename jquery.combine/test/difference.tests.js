@@ -80,9 +80,10 @@
 	});
 
 	test('Two objects returns difference', function () {
-		var u = { foo: "abc", bar: "cde" };
-		var a = { bar: "fgh" };
-		var expected = { foo: "abc" };
+		var u = { one: 1, two: 2 };
+		var a = { one: 1, three: 3 };
+		var expected = { two: 2 };
+
 		var result = $.difference(u, a);
 
 		deepEqual(result, expected);

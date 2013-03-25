@@ -28,11 +28,13 @@
 	module("Intersection.simple");
 
 	test('Two objects returns intersection', function () {
-		var a = { foo: "baz", bar: "abc" };
-		var b = { foo: "baz" };
+		var a = { one: 1, two: 2 };
+		var b = { one: 1, three: 3 };
+		var expected = { one: 1 };
+
 		var result = $.intersection(a, b);
 
-		ok(result !== undefined);
+		deepEqual(result, expected);
 	});
 
 	test('One value on left, no value on right, returns empty object', function () {

@@ -70,9 +70,10 @@
 	});
 
 	test('Two objects returns symmetric difference', function () {
-		var a = { foo: "abc", bar: "cde" };
-		var b = { baz: "fgh" };
-		var expected = { foo: "abc", bar: "cde", baz: "fgh" };
+		var a = { one: 1, two: 2 };
+		var b = { one: 1, three: 3 };
+		var expected = { two: 2, three: 3 };
+
 		var result = $.symmetric(a, b);
 
 		deepEqual(result, expected);

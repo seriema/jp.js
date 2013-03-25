@@ -70,11 +70,12 @@
 	});
 
 	test('Two objects returns union', function () {
-		var a = { foo: "abc", bar: "cde" };
-		var b = { baz: "fgh" };
-		var expected = { foo: "abc", bar: "cde", baz: "fgh" };
-		var result = $.union(a, b);
+		var a = { one: 1, two: 2 };
+		var b = { one: 1, three: 3 };
 
+		var expected = { one: 1, two: 2, three: 3 };
+		var result = $.union(a, b);
+		
 		deepEqual(result, expected);
 	});
 
