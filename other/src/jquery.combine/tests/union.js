@@ -1,5 +1,9 @@
 ﻿module('Union');
 
+test('Blaaa', function () {
+
+});
+
 test('Does not modify first parameter', function () {
 	var a = original = { foo: "baz", bar: "abc" };
 	var b = { foo: "baz" };
