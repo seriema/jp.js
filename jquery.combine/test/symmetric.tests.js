@@ -25,6 +25,7 @@
 		deepEqual(result, original);
 	});
 
+
 	module('Symmetric.simple');
 
 	test('Value on left, no value on right, gives left value', function () {
@@ -77,6 +78,9 @@
 		deepEqual(result, expected);
 	});
 
+
+	module('Symmetric.multiple');
+
 	test('Three objects returns symmetric difference of all three', function () {
 		var a = { one: 1, foo: 'bar' };
 		var b = { two: 2, foo: 'bar' };
@@ -98,10 +102,10 @@
 	});
 
 	test('Four objects gives symmetric difference of all four', function () {
-		var a = { one: 1 };
+		var a = { one: 1, foo: 'bar' };
 		var b = { two: 2 };
 		var c = { three: 3 };
-		var d = { four: 4 };
+		var d = { four: 4, foo: 'bar' };
 		var expected = { one: 1, two: 2, three: 3, four: 4 };
 		var result = $.symmetric(a, b, c, d);
 

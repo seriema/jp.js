@@ -12,11 +12,13 @@
 			return arguments[0];
 
 		for(var i = 0; i < n; i++) {
-			var source = arguments[i];
-			var difference = {};
-			for (var j = i+1; j < n; j++) {
-				var comparison = arguments[j];
-				difference = $.difference(difference, source, comparison);
+			var difference = arguments[i];
+			for (var j = 0; j < n; j++) {
+				if (j === i)
+					continue;
+
+				var source = arguments[j];
+				difference = $.difference(difference, source);
 			}
 			result = $.union(result, difference);
 		}
