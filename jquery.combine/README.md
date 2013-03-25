@@ -5,8 +5,8 @@ Combine objects using basic set theory - such as union, intersection, difference
 ## Getting Started
 Download the [production version][min] or the [development version][max].
 
-[min]: https://raw.github.com/seriema/jp.js/jquery.combine/master/dist/jquery.combine.min.js
-[max]: https://raw.github.com/seriema/jp.js/jquery.combine/master/dist/jquery.combine.js
+[min]: https://raw.github.com/seriema/jp.js/master/jquery.combine/dist/jquery.combine.min.js
+[max]: https://raw.github.com/seriema/jp.js/master/jquery.combine/dist/jquery.combine.js
 
 In your web page:
 
