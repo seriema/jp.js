@@ -2,6 +2,8 @@
 * https://github.com/seriema/jp.js
 * Copyright (c) 2013 John-Philip Johansson; Licensed MIT */
 (function($) {
+	'use strict';
+
 	/* Set difference of U and A, denoted U \ A, is the set of all members of U that are not members of A. 
 	 * The set difference {1,2,3} \ {2,3,4} is {1} , while, conversely, the set difference {2,3,4} \ {1,2,3} is {4}.
 	 * When A is a subset of U, the set difference U \ A is also called the complement of A in U. In this case, 
@@ -27,6 +29,8 @@
 
 
 (function($) {
+	'use strict';
+
 	/* Intersection of the sets A and B, denoted A ∩ B, is the set of all objects that are members of both A and B. 
 	 * The intersection of {1, 2, 3} and {2, 3, 4} is the set {2, 3} .
 	 */
@@ -51,6 +55,8 @@
 
 
 (function($) {
+	'use strict';
+
 	/* Symmetric difference of sets A and B is the set of all objects that are a member of exactly 
 	 * one of A and B (elements which are in one of the sets, but not in both). For instance, 
 	 * for the sets {1,2,3} and {2,3,4} , the symmetric difference set is {1,4} . It is the set difference 
@@ -82,6 +88,8 @@
 
 
 (function($) {
+	'use strict';
+
 	/* Union of the sets A and B, denoted A ∪ B, is the set of all objects that are a member of A, or B, or both.
 	 * The union of {1, 2, 3} and {2, 3, 4} is the set {1, 2, 3, 4} .
 	 */

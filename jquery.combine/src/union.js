@@ -1,4 +1,6 @@
 (function($) {
+	'use strict';
+
 	/* Union of the sets A and B, denoted A ∪ B, is the set of all objects that are a member of A, or B, or both.
 	 * The union of {1, 2, 3} and {2, 3, 4} is the set {1, 2, 3, 4} .
 	 */

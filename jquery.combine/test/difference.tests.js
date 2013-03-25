@@ -1,9 +1,11 @@
 (function($) {
+	'use strict';
+
 	module('Difference.common');
 
 	test('Does not modify first parameter', function () {
-		var u = { foo: "baz", bar: "abc" };
-		var a = { foo: "baz" };
+		var u = { foo: 'baz', bar: 'abc' };
+		var a = { foo: 'baz' };
 		var original = $.extend({}, u);
 
 		$.difference(u, a);
@@ -12,8 +14,8 @@
 	});
 
 	test('Does not modify second parameter', function () {
-		var u = { foo: "baz", bar: "abc" };
-		var a = { foo: "baz" };
+		var u = { foo: 'baz', bar: 'abc' };
+		var a = { foo: 'baz' };
 		var original = $.extend({}, a);
 
 		$.difference(u, a);
@@ -28,7 +30,7 @@
 	});
 
 	test('One parameter returns that parameter', function () {
-		var u = { foo: "baz", bar: "abc" };
+		var u = { foo: 'baz', bar: 'abc' };
 		var original = $.extend({}, u);
 		var result = $.difference(u);
 
@@ -39,7 +41,7 @@
 	module('Difference.simple');
 
 	test('Property on left, no property on right, gives left value', function () {
-		var u = { prop: "value" };
+		var u = { prop: 'value' };
 		var a = {};
 		var result = $.difference(u, a);
 
@@ -48,7 +50,7 @@
 
 	test('No property on left, property on right, gives empty object', function () {
 		var u = {};
-		var a = { prop: "value" };
+		var a = { prop: 'value' };
 		var result = $.difference(u, a);
 
 		deepEqual(result, {});
@@ -63,8 +65,8 @@
 	});
 
 	test('Property on left and other property on right, gives left property', function () {
-		var u = { prop1: "foo" };
-		var a = { prop2: "bar" };
+		var u = { prop1: 'foo' };
+		var a = { prop2: 'bar' };
 		var result = $.difference(u, a);
 
 		deepEqual(result.prop1, u.prop1);
@@ -72,8 +74,8 @@
 	});
 
 	test('One value on left and other value on right, gives empty object', function () {
-		var u = { prop: "foo" };
-		var a = { prop: "bar" };
+		var u = { prop: 'foo' };
+		var a = { prop: 'bar' };
 		var result = $.difference(u, a);
 
 		deepEqual(result, {});

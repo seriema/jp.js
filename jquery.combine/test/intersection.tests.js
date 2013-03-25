@@ -1,10 +1,12 @@
 ﻿(function($) {
-	module("Intersection.common");
+	'use strict';
+
+	module('Intersection.common');
 
 	test('Does not modify first parameter', function () {
-		var a = { foo: "baz", bar: "abc" };
+		var a = { foo: 'baz', bar: 'abc' };
 		var original = a;
-		var b = { foo: "baz" };
+		var b = { foo: 'baz' };
 
 		$.intersection(a, b);
 
@@ -18,14 +20,14 @@
 	});
 
 	test('One parameter returns that parameter', function () {
-		var a = { foo: "baz", bar: "abc" };
+		var a = { foo: 'baz', bar: 'abc' };
 		var result = $.intersection(a);
 
 		deepEqual(result, a);
 	});
 
 
-	module("Intersection.simple");
+	module('Intersection.simple');
 
 	test('Two objects returns intersection', function () {
 		var a = { one: 1, two: 2 };
@@ -38,7 +40,7 @@
 	});
 
 	test('One value on left, no value on right, returns empty object', function () {
-		var a = { foo: "baz" };
+		var a = { foo: 'baz' };
 		var b = {};
 		var result = $.intersection(a, b);
 
@@ -47,23 +49,23 @@
 
 	test('No value on left, one value on right, returns empty object', function () {
 		var a = {};
-		var b = { foo: "baz" };
+		var b = { foo: 'baz' };
 		var result = $.intersection(a, b);
 
 		deepEqual(result, {});
 	});
 
 	test('One property on left, same property on right, returns right property', function () {
-		var a = { foo: "one" };
-		var b = { foo: "two" };
+		var a = { foo: 'one' };
+		var b = { foo: 'two' };
 		var result = $.intersection(a, b);
 
 		deepEqual(result, b);
 	});
 
 	test('Two properties on left, one equal property on right, returns only common property', function () {
-		var a = { foo: "bar", bar: "baz" };
-		var b = { foo: "bar" };
+		var a = { foo: 'bar', bar: 'baz' };
+		var b = { foo: 'bar' };
 		var result = $.intersection(a, b);
 
 		ok(result.foo);
@@ -71,8 +73,8 @@
 	});
 
 	test('One property on left, two properties with one equal to left on right, returns only equal property', function () {
-		var a = { foo: "bar" };
-		var b = { foo: "bar", bar: "baz" };
+		var a = { foo: 'bar' };
+		var b = { foo: 'bar', bar: 'baz' };
 		var result = $.intersection(a, b);
 
 		ok(result.foo);
@@ -80,8 +82,8 @@
 	});
 
 	test('Two properties on left, two properties on right with one equal to left, returns only equal property', function () {
-		var a = { foo: "bar", one: "baz" };
-		var b = { foo: "bar", two: "baz" };
+		var a = { foo: 'bar', one: 'baz' };
+		var b = { foo: 'bar', two: 'baz' };
 		var result = $.intersection(a, b);
 
 		ok(result.foo);
@@ -90,7 +92,7 @@
 	});
 
 
-	module("Intersection.multiple");
+	module('Intersection.multiple');
 
 	test('Three objects returns intersection of all three', function () {
 		var a = { '1': 'one', '2': 'two', '3': 'three' };
@@ -114,16 +116,16 @@
 	});
 
 /*
-	module("Intersection.recursive");
+	module('Intersection.recursive');
 
 	test('First paramater as bool (true) returns second parameter', function () {
-		var a = { foo: "baz", bar: "abc" };
+		var a = { foo: 'baz', bar: 'abc' };
 		var result = $.intersection(true, a);
 
 		deepEqual(result, a);
 	});
 
-	test('First paramater as "true" does a deep intersection (recursively one level)', function () {
+	test('First paramater as 'true' does a deep intersection (recursively one level)', function () {
 		var a = { foo: { one: 1, two: 2 } };
 		var b = { foo: { one: 1, three: 3 } };
 		var expected = { foo: { one: 1 } };
@@ -132,7 +134,7 @@
 		deepEqual(result, expected);
 	});
 
-	test('First paramater as "true" does a deep intersection (recursively two levels)', function () {
+	test('First paramater as 'true' does a deep intersection (recursively two levels)', function () {
 		var a = { foo: { bar: { one: 1, two: 2 }, baz: { three: 3, four: 4 } } };
 		var b = { foo: { bar: { one: 1, three: 3 }, baz: { four: 4 } } };
 		var expected = { foo: { bar: { one: 1 }, baz: { four: 4 } } };
