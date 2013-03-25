@@ -7,8 +7,8 @@
 	 * if the choice of U is clear from the context, the notation Ac is sometimes used instead of U \ A, 
 	 * particularly if U is a universal set as in the study of Venn diagrams.
 	 */
-	$.difference = function () {
-		var u = $.extend({}, arguments[0]);
+	$.difference = function (u) {
+		var result = $.extend({}, u);
 		var args = [].slice.call(arguments, 1);
 		var i = args.length;
 
@@ -16,10 +16,10 @@
 			var source = args[i];
 			for (var prop in source)
 				if (source.hasOwnProperty(prop))
-					delete u[prop];
+					delete result[prop];
 		}
 
-		return u;
+		return result;
 	};
 
 }(jQuery));

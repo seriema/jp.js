@@ -10,9 +10,6 @@
 		var result = {};
 		var n = arguments.length;
 
-		if (n === 1)
-			return arguments[0];
-
 		for(var i = 0; i < n; i++) {
 			var difference = arguments[i];
 			for (var j = 0; j < n; j++) {
