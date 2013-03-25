@@ -25,6 +25,7 @@
 		deepEqual(result, original);
 	});
 
+
 	module('Union.simple');
 
 	test('Value on left, no value on right, gives left value', function () {
@@ -76,6 +77,9 @@
 
 		deepEqual(result, expected);
 	});
+
+
+	module('Union.multiple');
 
 	test('Three objects returns union of all three', function () {
 		var a = { one: 1 };

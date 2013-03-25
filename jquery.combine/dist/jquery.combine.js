@@ -51,24 +51,6 @@
 
 
 (function($) {
-	/* Cartesian product of A and B, denoted A × B, is the set whose members are all possible ordered pairs (a,b)
-	 * where a is a member of A and b is a member of B. The cartesian product of {1, 2} and {red, white} is {(1, red),
-	 * (1, white), (2, red), (2, white)}.
-	 */
-	$.product = function() {
-
-	};
-
-	/* Power set of a set A is the set whose members are all possible subsets of A. 
-	 * For example, the power set of {1, 2} is { {}, {1}, {2}, {1,2} } .
-	*/
-	$.power = function() {
-
-	};
-}(jQuery));
-
-
-(function($) {
 	/* Symmetric difference of sets A and B is the set of all objects that are a member of exactly 
 	 * one of A and B (elements which are in one of the sets, but not in both). For instance, 
 	 * for the sets {1,2,3} and {2,3,4} , the symmetric difference set is {1,4} . It is the set difference 
@@ -82,11 +64,13 @@
 			return arguments[0];
 
 		for(var i = 0; i < n; i++) {
-			var source = arguments[i];
-			var difference = {};
-			for (var j = i+1; j < n; j++) {
-				var comparison = arguments[j];
-				difference = $.difference(difference, source, comparison);
+			var difference = arguments[i];
+			for (var j = 0; j < n; j++) {
+				if (j === i)
+					continue;
+
+				var source = arguments[j];
+				difference = $.difference(difference, source);
 			}
 			result = $.union(result, difference);
 		}
