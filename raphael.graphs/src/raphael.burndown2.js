@@ -20,7 +20,7 @@
 	};
 
 
-	r.fn.burndown = function (guidelineDataStart, guidelineDataStop, burndownDataStart, burndownDataStop, labels, width, height, yMax, colors) {
+	r.fn.burndown2 = function (guidelineDataStart, guidelineDataStop, burndownDataStart, burndownDataStop, labels, width, height, yMax, colors) {
 		var burndown = {};
 		var paper = this;
 

@@ -2,10 +2,10 @@
 <html>
     <head></head>
     <body>
-		<div id="holder"></div>
+		<div id="paper"></div>
 
-        <script src="raphael.js"></script>
-        <script src="raphael.jp.js"></script>
+		<script src="../libs/raphael/raphael-min.js"></script>
+		<script src="../dist/raphael.graphs.min.js"></script>
 
         <script>
 			(function () {
@@ -16,7 +16,11 @@
 				var arc2 = { color: '#A8AA31', completeness: 90, thickness: 40, total: 100, animTime: 1500, animType: "bounce" };
 				var background = { color: '#E0E0E0' };
 
-				Pauline(paper, arrow, circle, arc1, arc2, background);
+				var width = 680;
+				var height = 200;
+				var paper = Raphael('paper', width, height + 10);
+
+				paper.pauline(paper, arrow, circle, arc1, arc2, background);
 			}());
         </script>
 	</body>

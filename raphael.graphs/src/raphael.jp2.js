@@ -99,7 +99,7 @@
         jparrow(paper, arrow);
     };
 
-    Raphael.fn.pauline = function (arrow, circle, arcs, background, options) {
+    Raphael.fn.pauline2 = function (arrow, circle, arcs, background, options) {
         pauline(this, arrow, circle, arcs, background, options);
         return this;
     };

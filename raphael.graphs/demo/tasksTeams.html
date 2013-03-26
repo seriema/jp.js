@@ -2,8 +2,8 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<script src="raphael.js"></script>
-		<script src="raphael.burndown2.js"></script>
+		<script src="../libs/raphael/raphael-min.js"></script>
+		<script src="../dist/raphael.graphs.min.js"></script>
 		<script>
 			window.onload = function () {
 				var guidelineDataStart = [0, 0];
@@ -22,7 +22,7 @@
 				var yMax = 25;
 
 				var paper = Raphael('paper', width, height + 10);
-				paper.burndown(guidelineDataStart, guidelineDataStop, burndownDataStart, burndownDataStop, labels, width, height, yMax, colors);
+				paper.burndown2(guidelineDataStart, guidelineDataStop, burndownDataStart, burndownDataStop, labels, width, height, yMax, colors);
 			}
 		</script>
 	</head>

@@ -173,7 +173,7 @@
 	};
 
 
-	r.fn.burndown = function (guidelineDataStart, guidelineDataStop, burndownDataStart, burndownDataStop, labels, width, height, yMax, colors) {
+	r.fn.burndown2 = function (guidelineDataStart, guidelineDataStop, burndownDataStart, burndownDataStop, labels, width, height, yMax, colors) {
 		var burndown = {};
 		var paper = this;
 
@@ -522,7 +522,7 @@
         jparrow(paper, arrow);
     };
 
-    Raphael.fn.pauline = function (arrow, circle, arcs, background, options) {
+    Raphael.fn.pauline2 = function (arrow, circle, arcs, background, options) {
         pauline(this, arrow, circle, arcs, background, options);
         return this;
     };
@@ -629,7 +629,7 @@
         jparrow(paper, arrow);
     };
 
-    Raphael.fn.pauline = function (arrow, circle, arcs, background, options) {
+    Raphael.fn.pauline3 = function (arrow, circle, arcs, background, options) {
         pauline(this, arrow, circle, arcs, background, options);
         return this;
     };
