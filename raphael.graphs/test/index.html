@@ -9,9 +9,13 @@
   <!-- Load local QUnit. -->
   <link rel="stylesheet" href="../libs/qunit/qunit.css" media="screen">
   <script src="../libs/qunit/qunit.js"></script>
+  <!-- Load polyfill for phantomjs. -->
+  <script src="phantom.js"></script>
 
   <!-- Load local lib and tests. -->
-  <script src="pauline.tests.js"></script>
+  <script src="../libs/raphael/raphael-min.js"></script>
+  <script src="../src/raphael.burndown3.js"></script>
+  <script src="burndown.tests.js"></script>
 
   <!-- Removing access to jQuery and $. But it'll still be available as _$, if
        you REALLY want to mess around with jQuery in the console. REMEMBER WE
@@ -21,9 +25,6 @@
 <body>
   <div id="qunit"></div>
   <div id="qunit-fixture">
-    <span>lame test markup</span>
-    <span>normal test markup</span>
-    <span>awesome test markup</span>
   </div>
 </body>
 </html>
