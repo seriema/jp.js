@@ -25,22 +25,100 @@
 			'text-anchor': 'start'
 		}
 	};
+	
+	var _private = {
+		axisStepLength: function(fullLength, gutter, steps) {
+			return (fullLength - gutter) / (steps-1);
+		}
+	};
 
 	var math = {
+		createPath: function(width, height, storyPoints) {
+			var xStep = math.xStepLength(width, math.findXMax(storyPoints));
+			var yStep = math.yStepLength(height, math.findYMax(storyPoints));
+console.log('ystep', height, math.findYMax(storyPoints), yStep);
+//			var xMax = math.findXMax(storyPoints);
+//			var yMax = math.findYMax(storyPoints)
+			var xValues = [];
+			var yValues = [];
+
+			for (var i = 0; i < storyPoints.length; i++) {
+				var x = math.mapX(i, xStep);
+				var y = math.mapY(storyPoints[i], yStep, height);
+console.log('y', storyPoints[i], y);
+				xValues.push(x);
+				yValues.push(y);
+			}
+			
+			return { x: xValues, y: yValues };
+		},
+
+		findXMax: function(data) {
+			return data.length;
+		},
+
 		findYMax: function(data) {
 			var max = 0;
 
-			for (var line = 0, ln = data.length; line < ln; line++)
-			for (var point = 0, pn = data[line].length; point < pn; point++)
-			if (max < data[line][point]) max = data[line][point];
+			for (var point = 0, pn = data.length; point < pn; point++)
+				if (max < data[point])
+					max = data[point];
 
 			return max;
 		},
 
 		invertY: function(height, y) {
 			return height - y - defaults.gutter.y;
+		},
+
+		mapX: function(value, xStep) {
+			return value * xStep + defaults.gutter.x;
+		},
+
+		mapY: function(value, yStep, height) {
+			return math.invertY(height, value * yStep);
+		},
+
+		toPath: function(xValues, yValues) {
+			var path = '';
+			var min = xValues.length < yValues.length ? xValues.length : yValues.length;
+
+			for (var i = 0; i < min; i++) {
+				var p = i === 0 ? 'M' : ',L';
+				var x = xValues[i];
+				var y = yValues[i];
+				path += p + x + ' ' + y;
+			}
+
+			return path;
+		},
+
+		xStepLength: function(width, steps) {
+			return _private.axisStepLength(width, defaults.gutter.x, steps);
+		},
+
+		yStepLength: function(height, steps) {
+			return _private.axisStepLength(height, defaults.gutter.y, steps);
 		}
 	};
+
+/*
+function createPath(storyPoints) {
+	var xStep = math.xStepLength(width, storyPoints.length);
+	var yStep = math.yStepLength(height, yMax);
+	var xValues = [];
+	var yValues = [];
+
+	for (var i = 0; i < storyPoints.length; i++) {
+		var x = i * xStep + defaults.gutter.x;
+		var y = invertY(storyPoints[i] * yStep);
+		xValues.push(x);
+		yValues.push(y);
+	}
+	
+	return math.toPath(xValues, yValues);
+}
+*/
 
 	var burndown = function(guidelineDataStop, burndownDataStop, labels, colors) {
 			var burndown = {};
@@ -48,7 +126,7 @@
 			var width = this.width;
 			var height = this.height;
 			var invertY = math.invertY.bind(null, height);
-			var yMax = math.findYMax(burndownDataStop);
+			var yMax = math.findYMax(burndownDataStop[0]);
 
 			function createPath(yValues) {
 				var xStep = (width - defaults.gutter.x) / (yValues.length - 1);
@@ -185,13 +263,13 @@
 			var burndownDataStart = [];
 
 			for (var gi = 0, gn = guidelineDataStop.length; gi < gn; gi++)
-			guidelineDataStart.push(0);
+				guidelineDataStart.push(0);
 			for (var bi = 0, bn = burndownDataStop[0].length; bi < bn; bi++)
-			burndownDataStart.push(0);
+				burndownDataStart.push(0);
 
 			burndown.burndown = plotBurndown(burndownDataStart, burndownDataStop[0], (colors && colors[0]) || defaults.colors.burndown);
 			for (var i = 1, n = burndownDataStop.length; i < n; i++)
-			plotLine(burndownDataStart, burndownDataStop[i], (colors && colors[i]) || defaults.colors.stroke);
+				plotLine(burndownDataStart, burndownDataStop[i], (colors && colors[i]) || defaults.colors.stroke);
 			burndown.hAxis = plotHAxis(labels);
 			burndown.vAxis = plotVAxis();
 			//burndown.guideline = plotGuideline(guidelineDataStart, guidelineDataStop);
