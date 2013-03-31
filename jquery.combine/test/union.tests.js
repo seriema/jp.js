@@ -81,34 +81,11 @@
 		deepEqual(result, expected);
 	});
 
-
-	module('Union.multiple');
-
-	test('Three objects returns union of all three', function () {
-		var a = { one: 1 };
-		var b = { two: 2 };
-		var c = { three: 3 };
-		var expected = { one: 1, two: 2, three: 3 };
-		var result = $.union(a, b, c);
-
-		deepEqual(result, expected);
-	});
-
-	test('Three simple objects with same properties returns value of last one', function () {
-		var a = { foo: 1 };
-		var b = { foo: 2 };
-		var c = { foo: 3 };
-		var expected = { foo: 3 };
-		var result = $.union(a, b, c);
-
-		deepEqual(result, expected);
-	});
-
-	test('Four objects gives union of all four', function () {
-		var a = { one: 1 };
-		var b = { two: 2 };
-		var c = { three: 3 };
-		var d = { four: 4 };
+    test('Multiple objects returns union', function () {
+        var a = { one: 1, two: 2, three: 3, four: 4  };
+        var b = { two: 2, three: 3 };
+        var c = { three: 3, four: 4 };
+        var d = { four: 4, three: 3 };
 		var expected = { one: 1, two: 2, three: 3, four: 4 };
 		var result = $.union(a, b, c, d);
 

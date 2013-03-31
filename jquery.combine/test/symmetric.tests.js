@@ -28,7 +28,7 @@
 	});
 
 
-	module('Symmetric.simple');
+	module('Symmetric');
 
 	test('Value on left, no value on right, gives left value', function () {
 		var a = { prop: 'value' };
@@ -81,35 +81,12 @@
 		deepEqual(result, expected);
 	});
 
-
-	module('Symmetric.multiple');
-
-	test('Three objects returns symmetric difference of all three', function () {
-		var a = { one: 1, foo: 'bar' };
-		var b = { two: 2, foo: 'bar' };
-		var c = { three: 3, foo: 'bar' };
-		var expected = { one: 1, two: 2, three: 3 };
-		var result = $.symmetric(a, b, c);
-
-		deepEqual(result, expected);
-	});
-
-	test('Three simple objects with same properties returns empty object', function () {
-		var a = { foo: 1 };
-		var b = { foo: 2 };
-		var c = { foo: 3 };
-		var expected = { };
-		var result = $.symmetric(a, b, c);
-
-		deepEqual(result, expected);
-	});
-
-	test('Four objects gives symmetric difference of all four', function () {
-		var a = { one: 1, foo: 'bar' };
-		var b = { two: 2 };
-		var c = { three: 3 };
-		var d = { four: 4, foo: 'bar' };
-		var expected = { one: 1, two: 2, three: 3, four: 4 };
+    test('Multiple objects returns symmetric difference', function () {
+        var a = { one: 1, two: 2, three: 3, four: 4  };
+        var b = { two: 2, three: 3 };
+        var c = { three: 3, four: 4 };
+        var d = { four: 4, three: 3 };
+		var expected = { one: 1 };
 		var result = $.symmetric(a, b, c, d);
 
 		deepEqual(result, expected);
@@ -118,7 +95,7 @@
 /* TODO: Currently not supported
 	module('symmetric.recursive');
 
-	test('First paramater as 'true' does a deep symmetric (recursively one level)', function () {
+	test('First parameter as 'true' does a deep symmetric (recursively one level)', function () {
 		var a = { foo: { one: 1, two: 2 } };
 		var b = { foo: { one: 1, three: 3 } };
 		var expected = { foo: { one: 1,  two: 2, three: 3 } };
@@ -127,7 +104,7 @@
 		deepEqual(result, expected);
 	});
 
-	test('First paramater as 'true' does a deep symmetric (recursively two levels)', function () {
+	test('First parameter as 'true' does a deep symmetric (recursively two levels)', function () {
 		var a = { foo: { bar: { one: 1, two: 2 }, baz: { three: 3, four: 4 } } };
 		var b = { foo: { bar: { one: 1, three: 3 }, baz: { four: 4 } } };
 		var expected = { foo: { bar: { one: 1, two: 2, three: 3  }, baz: { three: 3, four: 4 } } };

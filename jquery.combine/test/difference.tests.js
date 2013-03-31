@@ -38,7 +38,7 @@
 	});
 
 
-	module('Difference.simple');
+	module('Difference');
 
 	test('Property on left, no property on right, gives left value', function () {
 		var u = { prop: 'value' };
@@ -81,7 +81,7 @@
 		deepEqual(result, {});
 	});
 
-	test('Two objects returns difference', function () {
+	test('Two objects returns difference of first against second', function () {
 		var u = { one: 1, two: 2 };
 		var a = { one: 1, three: 3 };
 		var expected = { two: 2 };
@@ -91,34 +91,11 @@
 		deepEqual(result, expected);
 	});
 
-
-	module('Difference.multiple');
-
-	test('Three simple objects returns difference of the first against the rest', function () {
-		var u = { one: 1, two: 2, three: 3 };
-		var a = { two: 2 };
-		var b = { three: 3 };
-		var expected = { one: 1 };
-		var result = $.difference(u, a, b);
-
-		deepEqual(result, expected);
-	});
-
-	test('Three objects returns difference of the first against the rest', function () {
-		var u = { one: 1, two: 2, three: 3 };
-		var a = { two: 2, four: 4 };
-		var b = { three: 3, five: 5 };
-		var expected = { one: 1 };
-		var result = $.difference(u, a, b);
-
-		deepEqual(result, expected);
-	});
-
-	test('Four simple objects gives difference of all four', function () {
+	test('Multiple objects returns difference of first against the rest', function () {
 		var u = { one: 1, two: 2, three: 3, four: 4  };
-		var a = { two: 2 };
-		var b = { three: 3 };
-		var c = { four: 4 };
+		var a = { two: 2, three: 3 };
+		var b = { three: 3, four: 4 };
+		var c = { four: 4, three: 3 };
 		var expected = { one: 1 };
 		var result = $.difference(u, a, b, c);
 
