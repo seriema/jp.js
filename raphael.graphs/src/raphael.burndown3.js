@@ -25,10 +25,10 @@
 			'text-anchor': 'start'
 		}
 	};
-	
+
 	var _private = {
 		axisStepLength: function(fullLength, gutter, steps) {
-			return (fullLength - gutter) / (steps-1);
+			return (fullLength - gutter) / steps;
 		}
 	};
 
@@ -36,33 +36,29 @@
 		createPath: function(width, height, storyPoints) {
 			var xStep = math.xStepLength(width, math.findXMax(storyPoints));
 			var yStep = math.yStepLength(height, math.findYMax(storyPoints));
-console.log('ystep', height, math.findYMax(storyPoints), yStep);
-//			var xMax = math.findXMax(storyPoints);
-//			var yMax = math.findYMax(storyPoints)
 			var xValues = [];
 			var yValues = [];
 
 			for (var i = 0; i < storyPoints.length; i++) {
 				var x = math.mapX(i, xStep);
 				var y = math.mapY(storyPoints[i], yStep, height);
-console.log('y', storyPoints[i], y);
 				xValues.push(x);
 				yValues.push(y);
 			}
-			
+
 			return { x: xValues, y: yValues };
 		},
 
-		findXMax: function(data) {
-			return data.length;
+		findXMax: function(stories) {
+			return stories.length-1;
 		},
 
-		findYMax: function(data) {
+		findYMax: function(stories) {
 			var max = 0;
 
-			for (var point = 0, pn = data.length; point < pn; point++)
-				if (max < data[point])
-					max = data[point];
+			for (var i = 0, pn = stories.length; i < pn; i++)
+				if (max < stories[i])
+					max = stories[i];
 
 			return max;
 		},
@@ -78,6 +74,13 @@ console.log('y', storyPoints[i], y);
 		mapY: function(value, yStep, height) {
 			return math.invertY(height, value * yStep);
 		},
+
+        toAreaPath: function(xValues, yValues, height) {
+            var path = math.toPath(xValues, yValues);
+            path += 'L' + defaults.gutter.x + ' ' + math.invertY(height, 0);
+            path += 'Z';
+            return path;
+        },
 
 		toPath: function(xValues, yValues) {
 			var path = '';
