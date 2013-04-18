@@ -63,7 +63,17 @@
 			return max;
 		},
 
-		invertY: function(height, y) {
+        findYMin: function(stories) {
+            var min = Infinity;
+
+            for (var i = 0, pn = stories.length; i < pn; i++)
+                if (min > stories[i])
+                    min = stories[i];
+
+            return min;
+        },
+
+        invertY: function(height, y) {
 			return height - y - defaults.gutter.y;
 		},
 
@@ -75,10 +85,10 @@
 			return math.invertY(height, value * yStep);
 		},
 
-        toAreaPath: function(xValues, yValues, height) {
+        toAreaPath: function(xValues, yValues) {
             var path = math.toPath(xValues, yValues);
-            path += 'L' + defaults.gutter.x + ' ' + math.invertY(height, 0);
-            path += 'Z';
+            path += ',L' + xValues[0] + ' ' + math.findYMin(yValues);
+            path += ',Z';
             return path;
         },
 
@@ -123,11 +133,9 @@ function createPath(storyPoints) {
 }
 */
 
-	var burndown = function(guidelineDataStop, burndownDataStop, labels, colors) {
+	var burndown = function(guidelineDataStop, burndownDataStop, labels, width, height, colors) {
 			var burndown = {};
 			var paper = this;
-			var width = this.width;
-			var height = this.height;
 			var invertY = math.invertY.bind(null, height);
 			var yMax = math.findYMax(burndownDataStop[0]);
 

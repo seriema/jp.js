@@ -29,7 +29,7 @@
 	});
 
 	test('Burndown line uses default color', function() {
-		var graph = paper.burndown3(guidelineDataStop, burndownDataStop, labels);
+		var graph = paper.burndown3(guidelineDataStop, burndownDataStop, labels, width, height);
 		var bline = graph.burndown.line.attr('stroke');
 		var expected = burndownF.defaults.colors.burndown;
 
@@ -40,7 +40,7 @@
 		var color = '#bada55';
 		burndownF.defaults.colors.burndown = color;
 
-		var graph = paper.burndown3(guidelineDataStop, burndownDataStop, labels);
+		var graph = paper.burndown3(guidelineDataStop, burndownDataStop, labels, width, height);
 		var bline = graph.burndown.line.attr('stroke');
 
 		strictEqual(bline, color);
@@ -48,14 +48,14 @@
 
 	test('Burndown line color can be set by user', function() {
 		var color = '#bada55';
-		var graph = paper.burndown3(guidelineDataStop, burndownDataStop, labels, [color]);
+		var graph = paper.burndown3(guidelineDataStop, burndownDataStop, labels, width, height, [color]);
 		var bline = graph.burndown.line.attr('stroke');
 
 		strictEqual(bline, color);
 	});
 
 	test('Burndown area uses default color', function() {
-		var graph = paper.burndown3(guidelineDataStop, burndownDataStop, labels);
+		var graph = paper.burndown3(guidelineDataStop, burndownDataStop, labels, width, height);
 		var barea = graph.burndown.area.attr('fill');
 		var expected = burndownF.defaults.colors.burndown;
 
@@ -66,7 +66,7 @@
 		var color = '#bada55';
 		burndownF.defaults.colors.burndown = color;
 
-		var graph = paper.burndown3(guidelineDataStop, burndownDataStop, labels);
+		var graph = paper.burndown3(guidelineDataStop, burndownDataStop, labels, width, height);
 		var barea = graph.burndown.area.attr('fill');
 
 		strictEqual(barea, color);
@@ -74,7 +74,7 @@
 
 	test('Burndown area color can be set by user', function() {
 		var color = '#bada55';
-		var graph = paper.burndown3(guidelineDataStop, burndownDataStop, labels, [color]);
+		var graph = paper.burndown3(guidelineDataStop, burndownDataStop, labels, width, height, [color]);
 		var barea = graph.burndown.area.attr('fill');
 
 		strictEqual(barea, color);
@@ -107,7 +107,31 @@
 		strictEqual(result, expected);
 	});
 
-	test('Inverts Y-value so that 0 on graph has correct value on Raphael paper', function() {
+    test('Finds min Y when its first', function() {
+        var data = [5,6,7,8,9];
+        var expected = 5;
+        var result = burndownF.math.findYMin(data);
+
+        strictEqual(result, expected);
+    });
+
+    test('Finds min Y when its last', function() {
+        var data = [6,7,8,9,5];
+        var expected = 5;
+        var result = burndownF.math.findYMin(data);
+
+        strictEqual(result, expected);
+    });
+
+    test('Finds min Y', function() {
+        var data = [6,5,7,8,9];
+        var expected = 5;
+        var result = burndownF.math.findYMin(data);
+
+        strictEqual(result, expected);
+    });
+
+    test('Inverts Y-value so that 0 on graph has correct value on Raphael paper', function() {
 		var yValue = burndownF.math.invertY(height, 0);
 		var expected = height - defaults.gutter.y;
 
@@ -152,6 +176,16 @@
 
 		strictEqual(path, expected);
 	});
+
+    test('Points lists generate correct SVG path area', function() {
+        var xValues = [1, 2, 3, 4];
+        var yValues = [11, 12, 13, 14];
+        var expected = 'M1 11,L2 12,L3 13,L4 14,L1 11,Z';
+
+        var path = burndownF.math.toAreaPath(xValues, yValues);
+
+        strictEqual(path, expected);
+    });
 
 	test('Length between data-points on x-axis is calculated correctly, starting at the gutter', function() {
 		var width = 100;
